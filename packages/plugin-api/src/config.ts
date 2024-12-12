@@ -13,7 +13,7 @@ export interface Config {
    * ```json
    * {
    *   "plugins": {
-   *     "@allure/classic": {
+   *     "@allurereport/classic": {
    *       options: {}
    *     }
    *   }
@@ -25,7 +25,7 @@ export interface Config {
    * {
    *   "plugins": {
    *     "my-custom-allure-id": {
-   *       import: "@allure/classic",
+   *       import: "@allurereport/classic",
    *       options: {}
    *     }
    *   }

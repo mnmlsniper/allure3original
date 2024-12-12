@@ -1,4 +1,4 @@
-import { reportDataUrl } from "@allure/web-commons";
+import { reportDataUrl } from "@allurereport/web-commons";
 import { Collection } from "backbone";
 import { flatten, keys, omit, uniq, values } from "underscore";
 

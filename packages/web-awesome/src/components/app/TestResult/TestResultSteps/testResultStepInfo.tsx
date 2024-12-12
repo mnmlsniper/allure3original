@@ -1,4 +1,4 @@
-import { formatDuration } from "@allure/core-api";
+import { formatDuration } from "@allurereport/core-api";
 import LineArrowsCornerDownRight from "@/assets/svg/line-arrows-corner-down-right.svg";
 import LineFilesFileAttachment from "@/assets/svg/line-files-file-attachment-2.svg";
 import * as styles from "@/components/app/TestResult/TestResultSteps/styles.scss";

@@ -1,5 +1,5 @@
-import type { TestResult, TestStepResult } from "@allure/core-api";
-import { formatDuration } from "@allure/core-api";
+import type { TestResult, TestStepResult } from "@allurereport/core-api";
+import { formatDuration } from "@allurereport/core-api";
 
 export const formatSteps = (tr: TestResult): string | undefined => {
   if (tr.steps.length === 0) {

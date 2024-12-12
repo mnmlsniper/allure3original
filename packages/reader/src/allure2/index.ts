@@ -1,4 +1,4 @@
-import { notNull } from "@allure/core-api";
+import { notNull } from "@allurereport/core-api";
 import type {
   RawFixtureResult,
   RawStep,
@@ -10,7 +10,7 @@ import type {
   RawTestStatus,
   ResultsReader,
   ResultsVisitor,
-} from "@allure/reader-api";
+} from "@allurereport/reader-api";
 import { XMLParser } from "fast-xml-parser";
 import { randomUUID } from "node:crypto";
 import { Category, ExecutorInfo } from "../model.js";

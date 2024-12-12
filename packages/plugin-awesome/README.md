@@ -19,9 +19,9 @@ The plugin generates brand new Allure Report with modern design and new features
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-awesome
-yarn add @allure/plugin-awesome
-pnpm add @allure/plugin-awesome
+npm add @allurereport/plugin-awesome
+yarn add @allurereport/plugin-awesome
+pnpm add @allurereport/plugin-awesome
 ```
 
 Then, add the plugin to the Allure configuration file:

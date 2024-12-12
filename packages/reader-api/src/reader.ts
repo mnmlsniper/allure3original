@@ -1,4 +1,4 @@
-import { ResultFile } from "@allure/plugin-api";
+import { ResultFile } from "@allurereport/plugin-api";
 import { RawFixtureResult, RawMetadata, RawTestResult } from "./model.js";
 
 export interface ReaderContext {

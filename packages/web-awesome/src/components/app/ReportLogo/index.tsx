@@ -1,4 +1,4 @@
-import { getReportOptions } from "@allure/web-commons";
+import { getReportOptions } from "@allurereport/web-commons";
 import { clsx } from "clsx";
 import reportLogoDefault from "@/assets/svg/report-logo.svg";
 import { AllureAwesomeReportOptions } from "../../../../types";

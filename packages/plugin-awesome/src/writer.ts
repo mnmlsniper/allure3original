@@ -1,5 +1,5 @@
-import type { ReportFiles, ResultFile } from "@allure/plugin-api";
-import type { AllureAwesomeTestResult } from "@allure/web-awesome";
+import type { ReportFiles, ResultFile } from "@allurereport/plugin-api";
+import type { AllureAwesomeTestResult } from "@allurereport/web-awesome";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 

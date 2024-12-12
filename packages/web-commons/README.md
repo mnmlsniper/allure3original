@@ -19,7 +19,7 @@ The package includes utilities which are used in web-implementations of Allure r
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/web-commons
-yarn add @allure/web-commons
-pnpm add @allure/web-commons
+npm add @allurereport/web-commons
+yarn add @allurereport/web-commons
+pnpm add @allurereport/web-commons
 ```

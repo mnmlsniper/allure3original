@@ -1,4 +1,4 @@
-import { statusesList } from "@allure/core-api";
+import { statusesList } from "@allurereport/core-api";
 import { computed } from "@preact/signals";
 import { FunctionComponent } from "preact";
 import MetadataItem, { MetadataProps } from "@/components/app/ReportMetadata/MetadataItem";

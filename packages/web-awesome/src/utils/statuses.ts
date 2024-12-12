@@ -1,4 +1,4 @@
-import type { DefaultTreeGroup, DefaultTreeLeaf, TestStatus, TreeData } from "@allure/core-api";
+import type { DefaultTreeGroup, DefaultTreeLeaf, TestStatus, TreeData } from "@allurereport/core-api";
 
 export type Stats = Record<TestStatus, number> & { total?: number };
 

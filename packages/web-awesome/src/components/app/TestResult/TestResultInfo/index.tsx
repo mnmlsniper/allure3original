@@ -1,4 +1,4 @@
-import { formatDuration } from "@allure/core-api";
+import { formatDuration } from "@allurereport/core-api";
 import * as test from "node:test";
 import { FunctionalComponent } from "preact";
 import { AllureAwesomeTestResult } from "types";

@@ -1,4 +1,4 @@
-import type { DefaultTestStepResult, TestResult } from "@allure/core-api";
+import type { DefaultTestStepResult, TestResult } from "@allurereport/core-api";
 import { describe, expect, it } from "vitest";
 import {
   hasResultFailedSteps,

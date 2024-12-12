@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { basename, dirname, resolve } from "node:path";
 import { createCommand } from "../utils/commands.js";
 
@@ -14,7 +14,7 @@ export const TestPlanCommandAction = async (resultsDir: string, options: Command
   const config = await resolveConfig({
     output: output,
     plugins: {
-      "@allure/plugin-testplan": {
+      "@allurereport/plugin-testplan": {
         options: { fileName },
       },
     },

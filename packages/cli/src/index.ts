@@ -1,4 +1,4 @@
-import { defineConfig } from "@allure/core";
+import { defineConfig } from "@allurereport/core";
 import { cac } from "cac";
 import console from "node:console";
 import { readFileSync } from "node:fs";

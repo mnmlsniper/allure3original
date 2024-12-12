@@ -1,5 +1,5 @@
-import type { DefaultTestStepResult, TestResult, TestStatus, TestStepResult } from "@allure/core-api";
-import { isStep } from "@allure/core-api";
+import type { DefaultTestStepResult, TestResult, TestStatus, TestStepResult } from "@allurereport/core-api";
+import { isStep } from "@allurereport/core-api";
 import console from "node:console";
 import { gray, green, red, yellow } from "yoctocolors";
 import type { LogPluginOptions } from "./model.js";

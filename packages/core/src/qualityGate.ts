@@ -1,4 +1,4 @@
-import { filterSuccessful, filterUnsuccessful } from "@allure/core-api";
+import { filterSuccessful, filterUnsuccessful } from "@allurereport/core-api";
 import type {
   AllureStore,
   QualityGateConfig,
@@ -7,7 +7,7 @@ import type {
   QualityGateValidationResult,
   QualityGateValidator,
   QualityGateValidatorConstructor,
-} from "@allure/plugin-api";
+} from "@allurereport/plugin-api";
 
 // TODO replace abstraction with a helper method
 export abstract class AbstractQualityGateValidator implements QualityGateValidator {

@@ -7,7 +7,7 @@ import type {
   TestResult,
   TestStepResult,
   TreeData,
-} from "@allure/core-api";
+} from "@allurereport/core-api";
 
 export type AllureAwesomeReportOptions = {
   reportName?: string;

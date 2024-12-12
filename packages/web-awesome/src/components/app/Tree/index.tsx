@@ -1,4 +1,4 @@
-import type { TestStatus } from "@allure/core-api";
+import type { TestStatus } from "@allurereport/core-api";
 import { useTabsContext } from "@/components/app/Tabs";
 import Tree from "@/components/app/Tree/Tree";
 import { Loadable } from "@/components/commons/Loadable";

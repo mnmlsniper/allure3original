@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 export type LogCommandOptions = {
@@ -12,7 +12,7 @@ export const LogCommandAction = async (resultsDir: string, options: LogCommandOp
 
   const config = await resolveConfig({
     plugins: {
-      "@allure/plugin-log": {
+      "@allurereport/plugin-log": {
         options,
       },
     },

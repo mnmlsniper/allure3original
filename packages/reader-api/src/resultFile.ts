@@ -1,4 +1,4 @@
-import type { ResultFile } from "@allure/plugin-api";
+import type { ResultFile } from "@allurereport/plugin-api";
 import { lookup } from "mime-types";
 import { ReadStream, createReadStream, createWriteStream, existsSync, statSync } from "node:fs";
 import "node:fs/promises";

@@ -1,4 +1,4 @@
-import type { DefaultTreeData } from "@allure/core-api";
+import type { DefaultTreeData } from "@allurereport/core-api";
 import type { ReportContentContextValue } from "@/components/app/ReportBody/context";
 
 const statusOrder = {

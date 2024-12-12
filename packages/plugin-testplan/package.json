@@ -1,5 +1,5 @@
 {
-  "name": "@allure/plugin-testplan",
+  "name": "@allurereport/plugin-testplan",
   "version": "3.0.0-beta.2",
   "description": "Allure Plugin to generate testplan.json",
   "keywords": [
@@ -27,8 +27,8 @@
     "test": "rimraf ./out && vitest run"
   },
   "dependencies": {
-    "@allure/core-api": "workspace:*",
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*",
+    "@allurereport/plugin-api": "workspace:*"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.6.1",

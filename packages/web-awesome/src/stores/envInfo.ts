@@ -1,5 +1,5 @@
-import type { EnvironmentItem } from "@allure/core-api";
-import { fetchReportJsonData } from "@allure/web-commons";
+import type { EnvironmentItem } from "@allurereport/core-api";
+import { fetchReportJsonData } from "@allurereport/web-commons";
 import { signal } from "@preact/signals";
 import { StoreSignalState } from "@/stores/types";
 

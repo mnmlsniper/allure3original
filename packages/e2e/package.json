@@ -1,5 +1,5 @@
 {
-  "name": "@allure/e2e",
+  "name": "@allurereport/e2e",
   "version": "3.0.0-beta.2",
   "private": true,
   "description": "E2E tests for Allure reports",
@@ -11,9 +11,9 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@allure/core": "workspace:*",
-    "@allure/plugin-awesome": "workspace:*",
-    "@allure/static-server": "workspace:*",
+    "@allurereport/core": "workspace:*",
+    "@allurereport/plugin-awesome": "workspace:*",
+    "@allurereport/static-server": "workspace:*",
     "@playwright/test": "^1.48.2",
     "@stylistic/eslint-plugin": "^2.6.1",
     "@types/eslint": "^8.56.11",

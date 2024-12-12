@@ -1,4 +1,4 @@
-import { fetchReportAttachment } from "@allure/web-commons";
+import { fetchReportAttachment } from "@allurereport/web-commons";
 
 export interface Attachments {
   id?: string;

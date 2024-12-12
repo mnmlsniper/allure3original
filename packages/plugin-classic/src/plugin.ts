@@ -1,5 +1,5 @@
-import type { EnvironmentItem } from "@allure/core-api";
-import type { AllureStore, Plugin, PluginContext } from "@allure/plugin-api";
+import type { EnvironmentItem } from "@allurereport/core-api";
+import type { AllureStore, Plugin, PluginContext } from "@allurereport/plugin-api";
 import { convertTestResult } from "./converters.js";
 import {
   generateAttachmentsData,

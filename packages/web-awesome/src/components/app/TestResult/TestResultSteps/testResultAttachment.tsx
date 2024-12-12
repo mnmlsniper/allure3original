@@ -1,4 +1,4 @@
-import type { AttachmentTestStepResult } from "@allure/core-api";
+import type { AttachmentTestStepResult } from "@allurereport/core-api";
 import type { FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
 import arrowsChevronDown from "@/assets/svg/arrows-chevron-down.svg";

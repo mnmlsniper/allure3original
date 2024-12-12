@@ -21,7 +21,7 @@ The package is utilized by Classic Plugin.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/web-classic
-yarn add @allure/web-classic
-pnpm add @allure/web-classic
+npm add @allurereport/web-classic
+yarn add @allurereport/web-classic
+pnpm add @allurereport/web-classic
 ```

@@ -19,9 +19,9 @@ This plugin prints report in the terminal.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-log
-yarn add @allure/plugin-log
-pnpm add @allure/plugin-log
+npm add @allurereport/plugin-log
+yarn add @allurereport/plugin-log
+pnpm add @allurereport/plugin-log
 ```
 
 Then, add the plugin to the Allure configuration file:

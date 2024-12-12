@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 type CsvCommandOptions = {
@@ -12,7 +12,7 @@ export const CsvCommandAction = async (resultsDir: string, options: CsvCommandOp
   const before = new Date().getTime();
   const config = await resolveConfig({
     plugins: {
-      "@allure/plugin-csv": {
+      "@allurereport/plugin-csv": {
         options,
       },
     },

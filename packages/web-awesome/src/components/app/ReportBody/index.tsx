@@ -1,4 +1,4 @@
-import { statusesList } from "@allure/core-api";
+import { statusesList } from "@allurereport/core-api";
 import { Loadable } from "@/components/commons/Loadable";
 import { statsStore } from "@/stores";
 import { useI18n } from "@/stores/locale";

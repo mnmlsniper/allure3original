@@ -5,123 +5,6 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@allure/core-api@workspace:*, @allure/core-api@workspace:packages/core-api":
-  version: 0.0.0-use.local
-  resolution: "@allure/core-api@workspace:packages/core-api"
-  dependencies:
-    "@stylistic/eslint-plugin": "npm:^2.6.1"
-    "@types/eslint": "npm:^8.56.11"
-    "@types/node": "npm:^20.17.9"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
-    "@typescript-eslint/parser": "npm:^8.0.0"
-    "@vitest/runner": "npm:^2.1.8"
-    allure-vitest: "npm:^3.0.7"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jsdoc: "npm:^50.0.0"
-    eslint-plugin-n: "npm:^17.10.1"
-    eslint-plugin-no-null: "npm:^1.0.2"
-    eslint-plugin-prefer-arrow: "npm:^1.2.3"
-    rimraf: "npm:^6.0.1"
-    typescript: "npm:^5.6.3"
-    vitest: "npm:^2.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@allure/core@workspace:*, @allure/core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@allure/core@workspace:packages/core"
-  dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
-    "@allure/plugin-awesome": "workspace:*"
-    "@allure/plugin-classic": "workspace:*"
-    "@allure/plugin-csv": "workspace:*"
-    "@allure/plugin-log": "workspace:*"
-    "@allure/plugin-progress": "workspace:*"
-    "@allure/plugin-slack": "workspace:*"
-    "@allure/plugin-testplan": "workspace:*"
-    "@allure/reader": "workspace:*"
-    "@allure/reader-api": "workspace:*"
-    "@stylistic/eslint-plugin": "npm:^2.6.1"
-    "@types/eslint": "npm:^8.56.11"
-    "@types/markdown-it": "npm:^14.1.2"
-    "@types/node": "npm:^20.17.9"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
-    "@typescript-eslint/parser": "npm:^8.0.0"
-    "@vitest/runner": "npm:^2.1.8"
-    "@vitest/snapshot": "npm:^2.1.8"
-    allure-js-commons: "npm:^3.0.7"
-    allure-vitest: "npm:^3.0.7"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jsdoc: "npm:^50.0.0"
-    eslint-plugin-n: "npm:^17.10.1"
-    eslint-plugin-no-null: "npm:^1.0.2"
-    eslint-plugin-prefer-arrow: "npm:^1.2.3"
-    markdown-it: "npm:^14.1.0"
-    rimraf: "npm:^6.0.1"
-    tslib: "npm:^2.7.0"
-    typescript: "npm:^5.6.3"
-    vitest: "npm:^2.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@allure/directory-watcher@workspace:*, @allure/directory-watcher@workspace:packages/directory-watcher":
-  version: 0.0.0-use.local
-  resolution: "@allure/directory-watcher@workspace:packages/directory-watcher"
-  dependencies:
-    "@stylistic/eslint-plugin": "npm:^2.6.1"
-    "@types/eslint": "npm:^8.56.11"
-    "@types/node": "npm:^20.17.9"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
-    "@typescript-eslint/parser": "npm:^8.0.0"
-    "@vitest/runner": "npm:^2.1.8"
-    allure-vitest: "npm:^3.0.7"
-    chokidar: "npm:^4.0.1"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jsdoc: "npm:^50.0.0"
-    eslint-plugin-n: "npm:^17.10.1"
-    eslint-plugin-no-null: "npm:^1.0.2"
-    eslint-plugin-prefer-arrow: "npm:^1.2.3"
-    rimraf: "npm:^6.0.1"
-    ts-node: "npm:^10.9.2"
-    typescript: "npm:^5.6.3"
-    vitest: "npm:^2.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@allure/e2e@workspace:packages/e2e":
-  version: 0.0.0-use.local
-  resolution: "@allure/e2e@workspace:packages/e2e"
-  dependencies:
-    "@allure/core": "workspace:*"
-    "@allure/plugin-awesome": "workspace:*"
-    "@allure/static-server": "workspace:*"
-    "@playwright/test": "npm:^1.48.2"
-    "@stylistic/eslint-plugin": "npm:^2.6.1"
-    "@types/eslint": "npm:^8.56.11"
-    "@types/node": "npm:^20.17.9"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
-    "@typescript-eslint/parser": "npm:^8.0.0"
-    allure-js-commons: "npm:^3.0.7"
-    allure-playwright: "npm:^3.0.7"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jsdoc: "npm:^50.0.0"
-    eslint-plugin-n: "npm:^17.10.1"
-    eslint-plugin-no-null: "npm:^1.0.2"
-    eslint-plugin-prefer-arrow: "npm:^1.2.3"
-    prettier: "npm:^3.3.3"
-    rimraf: "npm:^6.0.1"
-  languageName: unknown
-  linkType: soft
-
 "@allure/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@allure/monorepo@workspace:."
@@ -156,11 +39,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-api@workspace:*, @allure/plugin-api@workspace:packages/plugin-api":
+"@allurereport/core-api@workspace:*, @allurereport/core-api@workspace:packages/core-api":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-api@workspace:packages/plugin-api"
+  resolution: "@allurereport/core-api@workspace:packages/core-api"
   dependencies:
-    "@allure/core-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -181,14 +63,132 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-awesome@workspace:*, @allure/plugin-awesome@workspace:packages/plugin-awesome":
+"@allurereport/core@workspace:*, @allurereport/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-awesome@workspace:packages/plugin-awesome"
+  resolution: "@allurereport/core@workspace:packages/core"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
-    "@allure/web-awesome": "workspace:*"
-    "@allure/web-commons": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
+    "@allurereport/plugin-awesome": "workspace:*"
+    "@allurereport/plugin-classic": "workspace:*"
+    "@allurereport/plugin-csv": "workspace:*"
+    "@allurereport/plugin-log": "workspace:*"
+    "@allurereport/plugin-progress": "workspace:*"
+    "@allurereport/plugin-slack": "workspace:*"
+    "@allurereport/plugin-testplan": "workspace:*"
+    "@allurereport/reader": "workspace:*"
+    "@allurereport/reader-api": "workspace:*"
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    "@types/eslint": "npm:^8.56.11"
+    "@types/markdown-it": "npm:^14.1.2"
+    "@types/node": "npm:^20.17.9"
+    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
+    "@typescript-eslint/parser": "npm:^8.0.0"
+    "@vitest/runner": "npm:^2.1.8"
+    "@vitest/snapshot": "npm:^2.1.8"
+    allure-js-commons: "npm:^3.0.7"
+    allure-vitest: "npm:^3.0.7"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jsdoc: "npm:^50.0.0"
+    eslint-plugin-n: "npm:^17.10.1"
+    eslint-plugin-no-null: "npm:^1.0.2"
+    eslint-plugin-prefer-arrow: "npm:^1.2.3"
+    markdown-it: "npm:^14.1.0"
+    rimraf: "npm:^6.0.1"
+    tslib: "npm:^2.7.0"
+    typescript: "npm:^5.6.3"
+    vitest: "npm:^2.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@allurereport/directory-watcher@workspace:*, @allurereport/directory-watcher@workspace:packages/directory-watcher":
+  version: 0.0.0-use.local
+  resolution: "@allurereport/directory-watcher@workspace:packages/directory-watcher"
+  dependencies:
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    "@types/eslint": "npm:^8.56.11"
+    "@types/node": "npm:^20.17.9"
+    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
+    "@typescript-eslint/parser": "npm:^8.0.0"
+    "@vitest/runner": "npm:^2.1.8"
+    allure-vitest: "npm:^3.0.7"
+    chokidar: "npm:^4.0.1"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jsdoc: "npm:^50.0.0"
+    eslint-plugin-n: "npm:^17.10.1"
+    eslint-plugin-no-null: "npm:^1.0.2"
+    eslint-plugin-prefer-arrow: "npm:^1.2.3"
+    rimraf: "npm:^6.0.1"
+    ts-node: "npm:^10.9.2"
+    typescript: "npm:^5.6.3"
+    vitest: "npm:^2.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@allurereport/e2e@workspace:packages/e2e":
+  version: 0.0.0-use.local
+  resolution: "@allurereport/e2e@workspace:packages/e2e"
+  dependencies:
+    "@allurereport/core": "workspace:*"
+    "@allurereport/plugin-awesome": "workspace:*"
+    "@allurereport/static-server": "workspace:*"
+    "@playwright/test": "npm:^1.48.2"
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    "@types/eslint": "npm:^8.56.11"
+    "@types/node": "npm:^20.17.9"
+    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
+    "@typescript-eslint/parser": "npm:^8.0.0"
+    allure-js-commons: "npm:^3.0.7"
+    allure-playwright: "npm:^3.0.7"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jsdoc: "npm:^50.0.0"
+    eslint-plugin-n: "npm:^17.10.1"
+    eslint-plugin-no-null: "npm:^1.0.2"
+    eslint-plugin-prefer-arrow: "npm:^1.2.3"
+    prettier: "npm:^3.3.3"
+    rimraf: "npm:^6.0.1"
+  languageName: unknown
+  linkType: soft
+
+"@allurereport/plugin-api@workspace:*, @allurereport/plugin-api@workspace:packages/plugin-api":
+  version: 0.0.0-use.local
+  resolution: "@allurereport/plugin-api@workspace:packages/plugin-api"
+  dependencies:
+    "@allurereport/core-api": "workspace:*"
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    "@types/eslint": "npm:^8.56.11"
+    "@types/node": "npm:^20.17.9"
+    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
+    "@typescript-eslint/parser": "npm:^8.0.0"
+    "@vitest/runner": "npm:^2.1.8"
+    allure-vitest: "npm:^3.0.7"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jsdoc: "npm:^50.0.0"
+    eslint-plugin-n: "npm:^17.10.1"
+    eslint-plugin-no-null: "npm:^1.0.2"
+    eslint-plugin-prefer-arrow: "npm:^1.2.3"
+    rimraf: "npm:^6.0.1"
+    typescript: "npm:^5.6.3"
+    vitest: "npm:^2.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@allurereport/plugin-awesome@workspace:*, @allurereport/plugin-awesome@workspace:packages/plugin-awesome":
+  version: 0.0.0-use.local
+  resolution: "@allurereport/plugin-awesome@workspace:packages/plugin-awesome"
+  dependencies:
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
+    "@allurereport/web-awesome": "workspace:*"
+    "@allurereport/web-commons": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/d3-shape": "npm:^3.1.6"
     "@types/eslint": "npm:^8.56.11"
@@ -212,14 +212,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-classic@workspace:*, @allure/plugin-classic@workspace:packages/plugin-classic":
+"@allurereport/plugin-classic@workspace:*, @allurereport/plugin-classic@workspace:packages/plugin-classic":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-classic@workspace:packages/plugin-classic"
+  resolution: "@allurereport/plugin-classic@workspace:packages/plugin-classic"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
-    "@allure/web-classic": "workspace:*"
-    "@allure/web-commons": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
+    "@allurereport/web-classic": "workspace:*"
+    "@allurereport/web-commons": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -241,12 +241,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-csv@workspace:*, @allure/plugin-csv@workspace:packages/plugin-csv":
+"@allurereport/plugin-csv@workspace:*, @allurereport/plugin-csv@workspace:packages/plugin-csv":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-csv@workspace:packages/plugin-csv"
+  resolution: "@allurereport/plugin-csv@workspace:packages/plugin-csv"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -267,40 +267,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-log@workspace:*, @allure/plugin-log@workspace:packages/plugin-log":
+"@allurereport/plugin-log@workspace:*, @allurereport/plugin-log@workspace:packages/plugin-log":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-log@workspace:packages/plugin-log"
+  resolution: "@allurereport/plugin-log@workspace:packages/plugin-log"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
-    "@stylistic/eslint-plugin": "npm:^2.6.1"
-    "@types/eslint": "npm:^8.56.11"
-    "@types/node": "npm:^20.17.9"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
-    "@typescript-eslint/parser": "npm:^8.0.0"
-    "@vitest/runner": "npm:^2.1.8"
-    "@vitest/snapshot": "npm:^2.1.8"
-    allure-vitest: "npm:^3.0.7"
-    eslint: "npm:^8.57.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-jsdoc: "npm:^50.0.0"
-    eslint-plugin-n: "npm:^17.10.1"
-    eslint-plugin-no-null: "npm:^1.0.2"
-    eslint-plugin-prefer-arrow: "npm:^1.2.3"
-    rimraf: "npm:^6.0.1"
-    typescript: "npm:^5.6.3"
-    vitest: "npm:^2.1.8"
-    yoctocolors: "npm:^2.1.1"
-  languageName: unknown
-  linkType: soft
-
-"@allure/plugin-progress@workspace:*, @allure/plugin-progress@workspace:packages/plugin-progress":
-  version: 0.0.0-use.local
-  resolution: "@allure/plugin-progress@workspace:packages/plugin-progress"
-  dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -323,12 +295,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-server-reload@workspace:*, @allure/plugin-server-reload@workspace:packages/plugin-server-reload":
+"@allurereport/plugin-progress@workspace:*, @allurereport/plugin-progress@workspace:packages/plugin-progress":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-server-reload@workspace:packages/plugin-server-reload"
+  resolution: "@allurereport/plugin-progress@workspace:packages/plugin-progress"
   dependencies:
-    "@allure/plugin-api": "workspace:*"
-    "@allure/static-server": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
+    "@stylistic/eslint-plugin": "npm:^2.6.1"
+    "@types/eslint": "npm:^8.56.11"
+    "@types/node": "npm:^20.17.9"
+    "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
+    "@typescript-eslint/parser": "npm:^8.0.0"
+    "@vitest/runner": "npm:^2.1.8"
+    "@vitest/snapshot": "npm:^2.1.8"
+    allure-vitest: "npm:^3.0.7"
+    eslint: "npm:^8.57.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-jsdoc: "npm:^50.0.0"
+    eslint-plugin-n: "npm:^17.10.1"
+    eslint-plugin-no-null: "npm:^1.0.2"
+    eslint-plugin-prefer-arrow: "npm:^1.2.3"
+    rimraf: "npm:^6.0.1"
+    typescript: "npm:^5.6.3"
+    vitest: "npm:^2.1.8"
+    yoctocolors: "npm:^2.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@allurereport/plugin-server-reload@workspace:*, @allurereport/plugin-server-reload@workspace:packages/plugin-server-reload":
+  version: 0.0.0-use.local
+  resolution: "@allurereport/plugin-server-reload@workspace:packages/plugin-server-reload"
+  dependencies:
+    "@allurereport/plugin-api": "workspace:*"
+    "@allurereport/static-server": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -350,12 +350,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-slack@workspace:*, @allure/plugin-slack@workspace:packages/plugin-slack":
+"@allurereport/plugin-slack@workspace:*, @allurereport/plugin-slack@workspace:packages/plugin-slack":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-slack@workspace:packages/plugin-slack"
+  resolution: "@allurereport/plugin-slack@workspace:packages/plugin-slack"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -376,12 +376,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/plugin-testplan@workspace:*, @allure/plugin-testplan@workspace:packages/plugin-testplan":
+"@allurereport/plugin-testplan@workspace:*, @allurereport/plugin-testplan@workspace:packages/plugin-testplan":
   version: 0.0.0-use.local
-  resolution: "@allure/plugin-testplan@workspace:packages/plugin-testplan"
+  resolution: "@allurereport/plugin-testplan@workspace:packages/plugin-testplan"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -402,12 +402,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/reader-api@workspace:*, @allure/reader-api@workspace:packages/reader-api":
+"@allurereport/reader-api@workspace:*, @allurereport/reader-api@workspace:packages/reader-api":
   version: 0.0.0-use.local
-  resolution: "@allure/reader-api@workspace:packages/reader-api"
+  resolution: "@allurereport/reader-api@workspace:packages/reader-api"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/mime-types": "npm:^2.1.4"
@@ -432,13 +432,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/reader@workspace:*, @allure/reader@workspace:packages/reader":
+"@allurereport/reader@workspace:*, @allurereport/reader@workspace:packages/reader":
   version: 0.0.0-use.local
-  resolution: "@allure/reader@workspace:packages/reader"
+  resolution: "@allurereport/reader@workspace:packages/reader"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/plugin-api": "workspace:*"
-    "@allure/reader-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*"
+    "@allurereport/reader-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"
@@ -461,12 +461,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/static-server@workspace:*, @allure/static-server@workspace:packages/static-server":
+"@allurereport/static-server@workspace:*, @allurereport/static-server@workspace:packages/static-server":
   version: 0.0.0-use.local
-  resolution: "@allure/static-server@workspace:packages/static-server"
+  resolution: "@allurereport/static-server@workspace:packages/static-server"
   dependencies:
-    "@allure/directory-watcher": "workspace:*"
-    "@allure/web-commons": "workspace:*"
+    "@allurereport/directory-watcher": "workspace:*"
+    "@allurereport/web-commons": "workspace:*"
     "@playwright/test": "npm:^1.48.2"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
@@ -495,12 +495,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/web-awesome@workspace:*, @allure/web-awesome@workspace:packages/web-awesome":
+"@allurereport/web-awesome@workspace:*, @allurereport/web-awesome@workspace:packages/web-awesome":
   version: 0.0.0-use.local
-  resolution: "@allure/web-awesome@workspace:packages/web-awesome"
+  resolution: "@allurereport/web-awesome@workspace:packages/web-awesome"
   dependencies:
-    "@allure/core-api": "workspace:*"
-    "@allure/web-commons": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/web-commons": "workspace:*"
     "@babel/core": "npm:^7.25.2"
     "@babel/plugin-transform-react-jsx": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.4"
@@ -559,11 +559,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/web-classic@workspace:*, @allure/web-classic@workspace:packages/web-classic":
+"@allurereport/web-classic@workspace:*, @allurereport/web-classic@workspace:packages/web-classic":
   version: 0.0.0-use.local
-  resolution: "@allure/web-classic@workspace:packages/web-classic"
+  resolution: "@allurereport/web-classic@workspace:packages/web-classic"
   dependencies:
-    "@allure/web-commons": "workspace:*"
+    "@allurereport/web-commons": "workspace:*"
     "@babel/core": "npm:^7.26.0"
     "@babel/eslint-parser": "npm:^7.25.9"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
@@ -635,11 +635,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@allure/web-commons@workspace:*, @allure/web-commons@workspace:packages/web-commons":
+"@allurereport/web-commons@workspace:*, @allurereport/web-commons@workspace:packages/web-commons":
   version: 0.0.0-use.local
-  resolution: "@allure/web-commons@workspace:packages/web-commons"
+  resolution: "@allurereport/web-commons@workspace:packages/web-commons"
   dependencies:
-    "@allure/core-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -4959,15 +4959,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "allure@workspace:packages/cli"
   dependencies:
-    "@allure/core": "workspace:*"
-    "@allure/core-api": "workspace:*"
-    "@allure/directory-watcher": "workspace:*"
-    "@allure/plugin-awesome": "workspace:*"
-    "@allure/plugin-progress": "workspace:*"
-    "@allure/plugin-server-reload": "workspace:*"
-    "@allure/plugin-slack": "workspace:*"
-    "@allure/reader-api": "workspace:*"
-    "@allure/static-server": "workspace:*"
+    "@allurereport/core": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
+    "@allurereport/directory-watcher": "workspace:*"
+    "@allurereport/plugin-awesome": "workspace:*"
+    "@allurereport/plugin-progress": "workspace:*"
+    "@allurereport/plugin-server-reload": "workspace:*"
+    "@allurereport/plugin-slack": "workspace:*"
+    "@allurereport/reader-api": "workspace:*"
+    "@allurereport/static-server": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/lodash.omit": "npm:^4.5.9"
@@ -12901,7 +12901,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sandbox@workspace:packages/sandbox"
   dependencies:
-    "@allure/plugin-csv": "workspace:*"
+    "@allurereport/plugin-csv": "workspace:*"
     "@stylistic/eslint-plugin": "npm:^2.6.1"
     "@types/eslint": "npm:^8.56.11"
     "@types/node": "npm:^20.17.9"

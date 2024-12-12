@@ -1,4 +1,4 @@
-import type { Statistic, TestStatus, WithChildren } from "@allure/core-api";
+import type { Statistic, TestStatus, WithChildren } from "@allurereport/core-api";
 import cx from "clsx";
 import type { FunctionComponent } from "preact";
 import { useState } from "preact/hooks";

@@ -6,8 +6,8 @@ import type {
   TestResult,
   TestStatus,
   TestStepResult,
-} from "@allure/core-api";
-import { filterIncludedInSuccessRate, isStep } from "@allure/core-api";
+} from "@allurereport/core-api";
+import { filterIncludedInSuccessRate, isStep } from "@allurereport/core-api";
 import { matchCategories } from "./categories.js";
 import type {
   Allure2Attachment,

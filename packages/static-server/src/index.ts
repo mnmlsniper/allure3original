@@ -1,4 +1,4 @@
-import watchDirectory from "@allure/directory-watcher";
+import watchDirectory from "@allurereport/directory-watcher";
 import * as console from "node:console";
 import { type Stats, createReadStream } from "node:fs";
 import { readFile, readdir, stat } from "node:fs/promises";
@@ -53,7 +53,7 @@ export const renderDirectory = async (files: string[], dirPath?: boolean) => {
  * To open the link immediately in browser, set the `open` option to `true`
  * @example
  * ```ts
- * import { serve } from "@allure/static-server";
+ * import { serve } from "@allurereport/static-server";
  *
  * const server = await serve({ port: 3000, live: true, servePath: "public" });
  * // trigger reload manually

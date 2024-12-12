@@ -13,9 +13,9 @@ import {
   TestStatus,
   TestStepResult,
   notNull,
-} from "@allure/core-api";
-import { findByLabelName } from "@allure/core-api";
-import { md5 } from "@allure/plugin-api";
+} from "@allurereport/core-api";
+import { findByLabelName } from "@allurereport/core-api";
+import { md5 } from "@allurereport/plugin-api";
 import {
   RawFixtureResult,
   RawStep,
@@ -25,7 +25,7 @@ import {
   RawTestParameter,
   RawTestResult,
   ReaderContext,
-} from "@allure/reader-api";
+} from "@allurereport/reader-api";
 import MarkdownIt from "markdown-it";
 import { randomUUID } from "node:crypto";
 import { extname } from "node:path";

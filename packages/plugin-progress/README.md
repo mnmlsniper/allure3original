@@ -19,9 +19,9 @@ This plugin indicates the report generation progress in the terminal.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-progress
-yarn add @allure/plugin-progress
-pnpm add @allure/plugin-progress
+npm add @allurereport/plugin-progress
+yarn add @allurereport/plugin-progress
+pnpm add @allurereport/plugin-progress
 ```
 
 Then, add the plugin to the Allure configuration file:

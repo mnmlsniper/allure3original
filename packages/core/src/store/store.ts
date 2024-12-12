@@ -12,9 +12,9 @@ import {
   nullsLast,
   ordinal,
   reverse,
-} from "@allure/core-api";
-import { AllureStore, ResultFile, md5 } from "@allure/plugin-api";
-import type { RawFixtureResult, RawMetadata, RawTestResult, ReaderContext, ResultsVisitor } from "@allure/reader-api";
+} from "@allurereport/core-api";
+import { AllureStore, ResultFile, md5 } from "@allurereport/plugin-api";
+import type { RawFixtureResult, RawMetadata, RawTestResult, ReaderContext, ResultsVisitor } from "@allurereport/reader-api";
 import { EventEmitter } from "node:events";
 import { extname } from "node:path";
 import { AllureStoreEvents } from "../utils/event.js";

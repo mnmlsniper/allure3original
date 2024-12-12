@@ -1,5 +1,5 @@
-import type { Config, PluginDescriptor } from "@allure/plugin-api";
-import type { QualityGateConfig } from "@allure/plugin-api";
+import type { Config, PluginDescriptor } from "@allurereport/plugin-api";
+import type { QualityGateConfig } from "@allurereport/plugin-api";
 import { readdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import * as process from "node:process";
@@ -9,7 +9,7 @@ import { readKnownIssues } from "./known.js";
 import { FileSystemReportFiles } from "./plugin.js";
 import { importWrapper } from "./utils/module.js";
 
-export { defineConfig } from "@allure/plugin-api";
+export { defineConfig } from "@allurereport/plugin-api";
 
 export const createConfig = async (opts: {
   reportName?: string;
@@ -103,10 +103,10 @@ export const resolveConfig = async (
 };
 
 export const resolvePlugin = async (path: string) => {
-  // try to append @allure/plugin- scope
-  if (!path.startsWith("@allure/plugin-")) {
+  // try to append @allurereport/plugin- scope
+  if (!path.startsWith("@allurereport/plugin-")) {
     try {
-      const module = await importWrapper(`@allure/plugin-${path}`);
+      const module = await importWrapper(`@allurereport/plugin-${path}`);
 
       return module.default;
     } catch (err) {}

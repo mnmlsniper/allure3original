@@ -1,18 +1,18 @@
-import type { AttachmentLink, EnvironmentItem, Statistic, TestResult } from "@allure/core-api";
-import type { AllureStore, ReportFiles, ResultFile } from "@allure/plugin-api";
-import { createTreeByLabels } from "@allure/plugin-api";
+import type { AttachmentLink, EnvironmentItem, Statistic, TestResult } from "@allurereport/core-api";
+import type { AllureStore, ReportFiles, ResultFile } from "@allurereport/plugin-api";
+import { createTreeByLabels } from "@allurereport/plugin-api";
 import type {
   AllureAwesomeFixtureResult,
   AllureAwesomeReportOptions,
   AllureAwesomeTestResult,
-} from "@allure/web-awesome";
+} from "@allurereport/web-awesome";
 import {
   createBaseUrlScript,
   createFontLinkTag,
   createReportDataScript,
   createScriptTag,
   createStylesLinkTag,
-} from "@allure/web-commons";
+} from "@allurereport/web-commons";
 import Handlebars from "handlebars";
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
@@ -63,7 +63,7 @@ const template = `<!DOCTYPE html>
 
 export const readTemplateManifest = async (singleFileMode?: boolean): Promise<TemplateManifest> => {
   const templateManifestSource = require.resolve(
-    `@allure/web-awesome/dist/${singleFileMode ? "single" : "multi"}/manifest.json`,
+    `@allurereport/web-awesome/dist/${singleFileMode ? "single" : "multi"}/manifest.json`,
   );
   const templateManifest = await readFile(templateManifestSource, { encoding: "utf-8" });
 
@@ -215,7 +215,7 @@ export const generateStaticFiles = async (
   if (!payload.singleFile) {
     for (const key in manifest) {
       const fileName = manifest[key];
-      const filePath = require.resolve(join("@allure/web-awesome/dist", singleFile ? "single" : "multi", fileName));
+      const filePath = require.resolve(join("@allurereport/web-awesome/dist", singleFile ? "single" : "multi", fileName));
 
       if (key.includes(".woff")) {
         headTags.push(createFontLinkTag(fileName));
@@ -239,7 +239,7 @@ export const generateStaticFiles = async (
     }
   } else {
     const mainJs = manifest["main.js"];
-    const mainJsSource = require.resolve(`@allure/web-awesome/dist/single/${mainJs}`);
+    const mainJsSource = require.resolve(`@allurereport/web-awesome/dist/single/${mainJs}`);
     const mainJsContentBuffer = await readFile(mainJsSource);
 
     bodyTags.push(createScriptTag(`data:text/javascript;base64,${mainJsContentBuffer.toString("base64")}`));

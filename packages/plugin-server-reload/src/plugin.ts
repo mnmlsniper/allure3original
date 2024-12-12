@@ -1,5 +1,5 @@
-import { Plugin } from "@allure/plugin-api";
-import { type AllureStaticServer } from "@allure/static-server";
+import { Plugin } from "@allurereport/plugin-api";
+import { type AllureStaticServer } from "@allurereport/static-server";
 
 export class ServerReloadPlugin implements Plugin {
   constructor(

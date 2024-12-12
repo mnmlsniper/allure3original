@@ -1,4 +1,4 @@
-import type { AllureStore, Plugin, PluginContext, Realtime } from "@allure/plugin-api";
+import type { AllureStore, Plugin, PluginContext, Realtime } from "@allurereport/plugin-api";
 import * as process from "node:process";
 import type { WriteStream } from "node:tty";
 import { green, red, yellow } from "yoctocolors";

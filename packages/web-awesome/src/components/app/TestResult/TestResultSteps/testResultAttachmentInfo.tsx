@@ -1,4 +1,4 @@
-import type { AttachmentTestStepResult } from "@allure/core-api";
+import type { AttachmentTestStepResult } from "@allurereport/core-api";
 import { filesize } from "filesize";
 import type { FunctionalComponent } from "preact";
 import { useEffect } from "preact/hooks";

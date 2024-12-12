@@ -1,5 +1,5 @@
-import { ResultFile } from "@allure/plugin-api";
-import { PathResultFile, ResultsReader, ResultsVisitor } from "@allure/reader-api";
+import { ResultFile } from "@allurereport/plugin-api";
+import { PathResultFile, ResultsReader, ResultsVisitor } from "@allurereport/reader-api";
 import { attachment, step } from "allure-js-commons";
 import { existsSync } from "fs";
 import { readFile } from "node:fs/promises";

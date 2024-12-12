@@ -1,4 +1,4 @@
-import type { BatchOptions, Realtime } from "@allure/plugin-api";
+import type { BatchOptions, Realtime } from "@allurereport/plugin-api";
 import console from "node:console";
 import type { EventEmitter } from "node:events";
 import { setTimeout } from "node:timers/promises";

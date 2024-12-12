@@ -1,4 +1,4 @@
-import { reportDataUrl } from "@allure/web-commons";
+import { reportDataUrl } from "@allurereport/web-commons";
 import { Collection } from "backbone";
 
 export default class GraphCollection extends Collection {

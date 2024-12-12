@@ -1,13 +1,13 @@
-import { AllureReport, isFileNotFoundError, readRuntimeConfig } from "@allure/core";
-import { createTestPlan } from "@allure/core-api";
+import { AllureReport, isFileNotFoundError, readRuntimeConfig } from "@allurereport/core";
+import { createTestPlan } from "@allurereport/core-api";
 import {
   Watcher,
   allureResultsDirectoriesWatcher,
   delayedFileProcessingWatcher,
   newFilesInDirectoryWatcher,
-} from "@allure/directory-watcher";
-import AllureAwesome from "@allure/plugin-awesome";
-import { PathResultFile } from "@allure/reader-api";
+} from "@allurereport/directory-watcher";
+import AllureAwesome from "@allurereport/plugin-awesome";
+import { PathResultFile } from "@allurereport/reader-api";
 import * as console from "node:console";
 import { mkdtemp, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";

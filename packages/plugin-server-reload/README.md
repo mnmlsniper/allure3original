@@ -19,9 +19,9 @@ The plugin reloads running Allure Static Server on Allure Report state change.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-server-reload
-yarn add @allure/plugin-server-reload
-pnpm add @allure/plugin-server-reload
+npm add @allurereport/plugin-server-reload
+yarn add @allurereport/plugin-server-reload
+pnpm add @allurereport/plugin-server-reload
 ```
 
 Then, add the plugin to the Allure configuration file:

@@ -1,4 +1,4 @@
-import { type TestStatus, formatDuration } from "@allure/core-api";
+import { type TestStatus, formatDuration } from "@allurereport/core-api";
 import type { FunctionComponent } from "preact";
 import TreeItemIcon from "@/components/app/Tree/TreeItemIcon";
 import { Text } from "@/components/commons/Typography";

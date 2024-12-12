@@ -4,7 +4,7 @@ import type {
   RawTestStepResult,
   ResultsReader,
   ResultsVisitor,
-} from "@allure/reader-api";
+} from "@allurereport/reader-api";
 import { XMLParser } from "fast-xml-parser";
 import {
   cleanBadXmlCharacters,

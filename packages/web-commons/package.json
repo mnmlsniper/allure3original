@@ -1,5 +1,5 @@
 {
-  "name": "@allure/web-commons",
+  "name": "@allurereport/web-commons",
   "version": "3.0.0-beta.2",
   "description": "Collection of utilities used across the web Allure reports",
   "keywords": [
@@ -23,7 +23,7 @@
     "clean": "rimraf ./dist"
   },
   "dependencies": {
-    "@allure/core-api": "workspace:*"
+    "@allurereport/core-api": "workspace:*"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.6.1",

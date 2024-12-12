@@ -19,9 +19,9 @@ Minimalistic web-server for serving Allure Reports and static files with live re
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/static-server
-yarn add @allure/static-server
-pnpm add @allure/static-server
+npm add @allurereport/static-server
+yarn add @allurereport/static-server
+pnpm add @allurereport/static-server
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ pnpm add @allure/static-server
 The server can be used programmatically only:
 
 ```javascript
-import { serve } from "@allure/static-server";
+import { serve } from "@allurereport/static-server";
 
 const server = await serve({
   // by default uses a random available port

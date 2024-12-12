@@ -1,6 +1,6 @@
-import type { HistoryDataPoint, KnownTestFailure } from "@allure/core-api";
-import type { Plugin, QualityGateConfig, ReportFiles } from "@allure/plugin-api";
-import type { ResultsReader } from "@allure/reader-api";
+import type { HistoryDataPoint, KnownTestFailure } from "@allurereport/core-api";
+import type { Plugin, QualityGateConfig, ReportFiles } from "@allurereport/plugin-api";
+import type { ResultsReader } from "@allurereport/reader-api";
 
 export interface FullConfig {
   name: string;

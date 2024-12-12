@@ -1,4 +1,4 @@
-import { md5 } from "@allure/plugin-api";
+import { md5 } from "@allurereport/plugin-api";
 import { describe, expect, it } from "vitest";
 import { StateData, testResultRawToState } from "../../src/store/convert.js";
 

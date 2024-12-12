@@ -1,9 +1,9 @@
-import type { TestFixtureResult, TestLabel, TestResult, TestStepResult } from "@allure/core-api";
+import type { TestFixtureResult, TestLabel, TestResult, TestStepResult } from "@allurereport/core-api";
 import type {
   AllureAwesomeFixtureResult,
   AllureAwesomeTestResult,
   AllureAwesomeTestStepResult,
-} from "@allure/web-awesome";
+} from "@allurereport/web-awesome";
 
 const mapLabelsByName = (labels: TestLabel[]): Record<string, string[]> => {
   return labels.reduce<Record<string, string[]>>((acc, { name, value }: TestLabel) => {

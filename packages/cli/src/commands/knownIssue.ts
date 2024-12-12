@@ -1,4 +1,4 @@
-import { AllureReport, createConfig, writeKnownIssues } from "@allure/core";
+import { AllureReport, createConfig, writeKnownIssues } from "@allurereport/core";
 import console from "node:console";
 import { resolve } from "node:path";
 import { createCommand } from "../utils/commands.js";

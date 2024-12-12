@@ -1,4 +1,4 @@
-import type { TestResult } from "@allure/core-api";
+import type { TestResult } from "@allurereport/core-api";
 import { MockedFunction, describe, expect, it, vi } from "vitest";
 import { printTest } from "../src/utils.js";
 

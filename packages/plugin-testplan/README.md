@@ -19,9 +19,9 @@ The plugin generates Allure Testplan file which can be used by Allure integratio
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-testplan
-yarn add @allure/plugin-testplan
-pnpm add @allure/plugin-testplan
+npm add @allurereport/plugin-testplan
+yarn add @allurereport/plugin-testplan
+pnpm add @allurereport/plugin-testplan
 ```
 
 Then, add the plugin to the Allure configuration file:

@@ -1,4 +1,4 @@
-import { reportDataUrl } from "@allure/web-commons";
+import { reportDataUrl } from "@allurereport/web-commons";
 import { Model } from "backbone";
 
 export default class WidgetsModel extends Model {

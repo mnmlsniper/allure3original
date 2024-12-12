@@ -1,4 +1,4 @@
-import { ensureReportDataReady } from "@allure/web-commons";
+import { ensureReportDataReady } from "@allurereport/web-commons";
 import { useEffect } from "preact/compat";
 import { Footer } from "@/components/app/Footer";
 import MainReport from "@/components/app/MainReport";

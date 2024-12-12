@@ -1,4 +1,4 @@
-import { getReportOptions } from "@allure/web-commons";
+import { getReportOptions } from "@allurereport/web-commons";
 import { ReportHeaderLogo } from "@/components/app/ReportHeader/ReportHeaderLogo";
 import { ReportHeaderPie } from "@/components/app/ReportHeader/ReportHeaderPie";
 import { Heading, Text } from "@/components/commons/Typography";

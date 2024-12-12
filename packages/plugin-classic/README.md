@@ -19,9 +19,9 @@ The plugin generates a classic Allure Report.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-classic
-yarn add @allure/plugin-classic
-pnpm add @allure/plugin-classic
+npm add @allurereport/plugin-classic
+yarn add @allurereport/plugin-classic
+pnpm add @allurereport/plugin-classic
 ```
 
 Then, add the plugin to the Allure configuration file:

@@ -19,9 +19,9 @@ This plugin generates the Allure Report in CSV file format.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-csv
-yarn add @allure/plugin-csv
-pnpm add @allure/plugin-csv
+npm add @allurereport/plugin-csv
+yarn add @allurereport/plugin-csv
+pnpm add @allurereport/plugin-csv
 ```
 
 Then, add the plugin to the Allure configuration file:

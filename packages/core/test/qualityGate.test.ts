@@ -5,7 +5,7 @@ import {
   QualityGateLabelsRulesMeta,
   TestCase,
   TestResult,
-} from "@allure/core-api";
+} from "@allurereport/core-api";
 import { describe, expect, it } from "vitest";
 import {
   AbstractQualityGateValidator,

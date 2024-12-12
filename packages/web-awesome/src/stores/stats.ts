@@ -1,5 +1,5 @@
-import type { Statistic } from "@allure/core-api";
-import { fetchReportJsonData } from "@allure/web-commons";
+import type { Statistic } from "@allurereport/core-api";
+import { fetchReportJsonData } from "@allurereport/web-commons";
 import { signal } from "@preact/signals";
 import { StoreSignalState } from "@/stores/types";
 

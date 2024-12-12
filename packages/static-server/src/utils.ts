@@ -1,4 +1,4 @@
-import { ALLURE_LIVE_RELOAD_HASH_STORAGE_KEY } from "@allure/web-commons";
+import { ALLURE_LIVE_RELOAD_HASH_STORAGE_KEY } from "@allurereport/web-commons";
 
 /* eslint-disable */
 export const EXTENSIONS_BY_TYPE: Record<string, string> = {

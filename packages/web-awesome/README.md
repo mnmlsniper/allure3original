@@ -21,7 +21,7 @@ The package is utilized by Awesome Plugin.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/web-awesome
-yarn add @allure/web-awesome
-pnpm add @allure/web-awesome
+npm add @allurereport/web-awesome
+yarn add @allurereport/web-awesome
+pnpm add @allurereport/web-awesome
 ```

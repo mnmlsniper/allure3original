@@ -1,4 +1,4 @@
-import { getReportOptions } from "@allure/web-commons";
+import { getReportOptions } from "@allurereport/web-commons";
 import { Text } from "@/components/commons/Typography";
 import { currentLocale } from "@/stores";
 import { AllureAwesomeReportOptions } from "../../../../types";

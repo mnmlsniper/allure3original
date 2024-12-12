@@ -1,4 +1,4 @@
-import { getReportOptions } from "@allure/web-commons";
+import { getReportOptions } from "@allurereport/web-commons";
 import { signal } from "@preact/signals";
 import type { AllureAwesomeReportOptions } from "../../types.js";
 

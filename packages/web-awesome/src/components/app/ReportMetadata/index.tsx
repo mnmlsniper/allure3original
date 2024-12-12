@@ -1,4 +1,4 @@
-import type { EnvironmentItem } from "@allure/core-api";
+import type { EnvironmentItem } from "@allurereport/core-api";
 import { FunctionalComponent } from "preact";
 import { useState } from "preact/hooks";
 import { MetadataList } from "@/components/app/Metadata";

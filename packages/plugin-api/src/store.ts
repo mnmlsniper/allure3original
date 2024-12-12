@@ -7,7 +7,7 @@ import type {
   TestCase,
   TestFixtureResult,
   TestResult,
-} from "@allure/core-api";
+} from "@allurereport/core-api";
 import { ResultFile } from "./resultFile.js";
 
 export interface AllureStore {

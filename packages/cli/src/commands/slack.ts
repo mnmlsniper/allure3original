@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 type CommandOptions = {
@@ -10,7 +10,7 @@ export const SlackCommandAction = async (resultsDir: string, options: CommandOpt
   const before = new Date().getTime();
   const config = await resolveConfig({
     plugins: {
-      "@allure/plugin-slack": {
+      "@allurereport/plugin-slack": {
         options,
       },
     },

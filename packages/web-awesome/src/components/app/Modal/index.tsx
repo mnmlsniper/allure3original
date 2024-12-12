@@ -1,4 +1,4 @@
-import type { AttachmentTestStepResult } from "@allure/core-api";
+import type { AttachmentTestStepResult } from "@allurereport/core-api";
 import { signal } from "@preact/signals";
 import type { FunctionalComponent, VNode } from "preact";
 import { useEffect } from "preact/hooks";

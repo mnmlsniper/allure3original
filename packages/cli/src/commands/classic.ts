@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 type ClassicCommandOptions = {
@@ -19,7 +19,7 @@ export const ClassicCommandAction = async (resultsDir: string, options: ClassicC
     historyPath,
     knownIssuesPath,
     plugins: {
-      "@allure/plugin-classic": {
+      "@allurereport/plugin-classic": {
         options: rest,
       },
     },

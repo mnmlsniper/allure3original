@@ -19,7 +19,7 @@ The package includes a collection of utilities which are used across all Allure 
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/core
-yarn add @allure/core
-pnpm add @allure/core
+npm add @allurereport/core
+yarn add @allurereport/core
+pnpm add @allurereport/core
 ```

@@ -1,5 +1,5 @@
-import { readRuntimeConfig } from "@allure/core";
-import { serve } from "@allure/static-server";
+import { readRuntimeConfig } from "@allurereport/core";
+import { serve } from "@allurereport/static-server";
 import { createCommand } from "../utils/commands.js";
 
 type CommandOptions = {

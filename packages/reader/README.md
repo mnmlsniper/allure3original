@@ -19,7 +19,7 @@ Set of Allure Reader implementations which allow to read different files formats
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/reader
-yarn add @allure/reader
-pnpm add @allure/reader
+npm add @allurereport/reader
+yarn add @allurereport/reader
+pnpm add @allurereport/reader
 ```

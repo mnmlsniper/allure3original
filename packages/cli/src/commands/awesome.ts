@@ -1,4 +1,4 @@
-import { AllureReport, resolveConfig } from "@allure/core";
+import { AllureReport, resolveConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 type AwesomeCommandOptions = {
@@ -20,7 +20,7 @@ export const AwesomeCommandAction = async (resultsDir: string, options: AwesomeC
     historyPath,
     knownIssuesPath,
     plugins: {
-      "@allure/plugin-awesome": {
+      "@allurereport/plugin-awesome": {
         options: rest,
       },
     },

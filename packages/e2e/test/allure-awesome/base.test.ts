@@ -1,7 +1,7 @@
-import { AllureReport, FileSystemReportFiles } from "@allure/core";
-import AllureAwesomePlugin from "@allure/plugin-awesome";
-import type { AllureStaticServer } from "@allure/static-server";
-import { serve } from "@allure/static-server";
+import { AllureReport, FileSystemReportFiles } from "@allurereport/core";
+import AllureAwesomePlugin from "@allurereport/plugin-awesome";
+import type { AllureStaticServer } from "@allurereport/static-server";
+import { serve } from "@allurereport/static-server";
 import { expect, test } from "@playwright/test";
 import { layer } from "allure-js-commons";
 import { Stage, Status } from "allure-js-commons";

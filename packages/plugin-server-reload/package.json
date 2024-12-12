@@ -1,5 +1,5 @@
 {
-  "name": "@allure/plugin-server-reload",
+  "name": "@allurereport/plugin-server-reload",
   "version": "3.0.0-beta.2",
   "description": "Allure Plugin to reload Allure Static Server on state change",
   "keywords": [
@@ -27,8 +27,8 @@
     "test": "rimraf ./out && vitest run"
   },
   "dependencies": {
-    "@allure/plugin-api": "workspace:*",
-    "@allure/static-server": "workspace:*"
+    "@allurereport/plugin-api": "workspace:*",
+    "@allurereport/static-server": "workspace:*"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.6.1",

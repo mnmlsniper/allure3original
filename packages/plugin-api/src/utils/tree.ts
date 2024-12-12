@@ -6,8 +6,8 @@ import type {
   TreeGroup,
   TreeLeaf,
   WithChildren,
-} from "@allure/core-api";
-import { emptyStatistic, incrementStatistic } from "@allure/core-api";
+} from "@allurereport/core-api";
+import { emptyStatistic, incrementStatistic } from "@allurereport/core-api";
 import { md5 } from "./misc.js";
 
 const addLeaf = (node: WithChildren, nodeId: string) => {

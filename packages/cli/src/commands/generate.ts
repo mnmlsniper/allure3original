@@ -1,4 +1,4 @@
-import { AllureReport, readRuntimeConfig } from "@allure/core";
+import { AllureReport, readRuntimeConfig } from "@allurereport/core";
 import { createCommand } from "../utils/commands.js";
 
 type CommandOptions = {

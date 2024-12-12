@@ -1,4 +1,4 @@
-import { Statistic, statusesList } from "@allure/core-api";
+import { Statistic, statusesList } from "@allurereport/core-api";
 import { clsx } from "clsx";
 import { FunctionComponent } from "preact";
 import { ArrowButton } from "@/components/app/ArrowButton";

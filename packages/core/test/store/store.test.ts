@@ -1,6 +1,6 @@
-import { HistoryDataPoint } from "@allure/core-api";
-import { md5 } from "@allure/plugin-api";
-import { BufferResultFile, RawTestResult } from "@allure/reader-api";
+import { HistoryDataPoint } from "@allurereport/core-api";
+import { md5 } from "@allurereport/plugin-api";
+import { BufferResultFile, RawTestResult } from "@allurereport/reader-api";
 import { describe, expect, it } from "vitest";
 import { DefaultAllureStore } from "../../src/store/store.js";
 

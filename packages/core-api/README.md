@@ -19,7 +19,7 @@ The collection of interfaces describing the core Allure Report entities.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/core-api
-yarn add @allure/core-api
-pnpm add @allure/core-api
+npm add @allurereport/core-api
+yarn add @allurereport/core-api
+pnpm add @allurereport/core-api
 ```

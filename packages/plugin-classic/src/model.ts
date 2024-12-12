@@ -1,4 +1,4 @@
-import type { Statistic } from "@allure/core-api";
+import type { Statistic } from "@allurereport/core-api";
 
 export type Allure2Status = "failed" | "broken" | "passed" | "skipped" | "unknown";
 

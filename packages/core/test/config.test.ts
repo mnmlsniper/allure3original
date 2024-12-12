@@ -8,7 +8,7 @@ vi.mock("../src/utils/module.js", () => ({
 
 describe("getPluginId", () => {
   it("cuts off npm package scope and returns the rest part", () => {
-    expect(getPluginId("@allure/classic")).toEqual("classic");
+    expect(getPluginId("@allurereport/classic")).toEqual("classic");
   });
 
   it("returns the same string if it doesn't have scope", () => {
@@ -26,11 +26,11 @@ describe("resolvePlugin", () => {
     vi.clearAllMocks();
   });
 
-  it("prepends @allure/plugin- prefix and tries to resolve plugin when the path is not scoped", async () => {
+  it("prepends @allurereport/plugin- prefix and tries to resolve plugin when the path is not scoped", async () => {
     const fixture = { name: "Allure" };
 
     (importWrapper as unknown as MockInstance).mockImplementation((path: string) => {
-      if (path.startsWith("@allure")) {
+      if (path.startsWith("@allurereport")) {
         throw new Error("not found");
       }
 
@@ -40,7 +40,7 @@ describe("resolvePlugin", () => {
     const plugin = await resolvePlugin("classic");
 
     expect(importWrapper).toHaveBeenCalledTimes(2);
-    expect(importWrapper).toHaveBeenCalledWith("@allure/plugin-classic");
+    expect(importWrapper).toHaveBeenCalledWith("@allurereport/plugin-classic");
     expect(importWrapper).toHaveBeenCalledWith("classic");
     expect(plugin).toEqual(fixture);
   });

@@ -1,4 +1,4 @@
-import { ensureReportDataReady } from "@allure/web-commons";
+import { ensureReportDataReady } from "@allurereport/web-commons";
 import "highlight.js/styles/github-gist.css";
 import $ from "jquery";
 import "normalize-css/normalize.css";

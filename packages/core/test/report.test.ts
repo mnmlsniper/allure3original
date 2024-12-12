@@ -1,5 +1,5 @@
-import { Plugin } from "@allure/plugin-api";
-import { BufferResultFile } from "@allure/reader-api";
+import { Plugin } from "@allurereport/plugin-api";
+import { BufferResultFile } from "@allurereport/reader-api";
 import { Mocked, describe, expect, it, vi } from "vitest";
 import { createConfig } from "../src/config.js";
 import { AllureReport } from "../src/report.js";

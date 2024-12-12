@@ -1,4 +1,4 @@
-import { fetchReportJsonData } from "@allure/web-commons";
+import { fetchReportJsonData } from "@allurereport/web-commons";
 import { signal } from "@preact/signals";
 import type { StoreSignalState } from "@/stores/types";
 

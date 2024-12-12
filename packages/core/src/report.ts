@@ -1,6 +1,6 @@
-import type { Plugin, PluginContext, PluginState, ReportFiles, ResultFile } from "@allure/plugin-api";
-import { allure1, allure2, attachments, junitXml } from "@allure/reader";
-import { PathResultFile, type ResultsReader } from "@allure/reader-api";
+import type { Plugin, PluginContext, PluginState, ReportFiles, ResultFile } from "@allurereport/plugin-api";
+import { allure1, allure2, attachments, junitXml } from "@allurereport/reader";
+import { PathResultFile, type ResultsReader } from "@allurereport/reader-api";
 import console from "node:console";
 import { randomUUID } from "node:crypto";
 import { EventEmitter } from "node:events";

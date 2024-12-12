@@ -1,5 +1,5 @@
 {
-  "name": "@allure/plugin-awesome",
+  "name": "@allurereport/plugin-awesome",
   "version": "3.0.0-beta.2",
   "description": "Allure Awesome Plugin – brand new HTML report with modern design and new features",
   "keywords": [
@@ -28,10 +28,10 @@
     "test": "rimraf ./out && vitest run"
   },
   "dependencies": {
-    "@allure/core-api": "workspace:*",
-    "@allure/plugin-api": "workspace:*",
-    "@allure/web-awesome": "workspace:*",
-    "@allure/web-commons": "workspace:*",
+    "@allurereport/core-api": "workspace:*",
+    "@allurereport/plugin-api": "workspace:*",
+    "@allurereport/web-awesome": "workspace:*",
+    "@allurereport/web-commons": "workspace:*",
     "d3-shape": "^3.2.0",
     "handlebars": "^4.7.8"
   },

@@ -1,4 +1,4 @@
-import type { TestResult } from "@allure/core-api";
+import type { TestResult } from "@allurereport/core-api";
 
 export type CsvOptions = {
   separator?: string;

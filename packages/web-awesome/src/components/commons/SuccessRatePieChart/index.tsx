@@ -1,4 +1,4 @@
-import type { TestStatus } from "@allure/core-api";
+import type { TestStatus } from "@allurereport/core-api";
 import { Heading } from "@/components/commons/Typography";
 import * as styles from "./styles.scss";
 

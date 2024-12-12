@@ -1,5 +1,5 @@
-import type { Statistic, TestStatus } from "@allure/core-api";
-import { statusesList } from "@allure/core-api";
+import type { Statistic, TestStatus } from "@allurereport/core-api";
+import { statusesList } from "@allurereport/core-api";
 import { PieArcDatum, arc, pie } from "d3-shape";
 
 export type TestResultSlice = {

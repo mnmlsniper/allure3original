@@ -1,4 +1,4 @@
-import { formatDuration } from "@allure/core-api";
+import { formatDuration } from "@allurereport/core-api";
 import { useState } from "preact/hooks";
 import arrowsChevronDown from "@/assets/svg/arrows-chevron-down.svg";
 import LineGeneralLinkExternal from "@/assets/svg/line-general-link-external.svg";

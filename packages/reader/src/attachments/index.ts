@@ -1,4 +1,4 @@
-import { ResultsReader } from "@allure/reader-api";
+import { ResultsReader } from "@allurereport/reader-api";
 
 const readerId = "attachments";
 

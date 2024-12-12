@@ -1,10 +1,10 @@
-import { AllureReport, isFileNotFoundError, readRuntimeConfig } from "@allure/core";
-import { newFilesInDirectoryWatcher } from "@allure/directory-watcher";
-import AllureAwesome from "@allure/plugin-awesome";
-import ProgressPlugin from "@allure/plugin-progress";
-import ServerReloadPlugin from "@allure/plugin-server-reload";
-import { PathResultFile } from "@allure/reader-api";
-import { serve } from "@allure/static-server";
+import { AllureReport, isFileNotFoundError, readRuntimeConfig } from "@allurereport/core";
+import { newFilesInDirectoryWatcher } from "@allurereport/directory-watcher";
+import AllureAwesome from "@allurereport/plugin-awesome";
+import ProgressPlugin from "@allurereport/plugin-progress";
+import ServerReloadPlugin from "@allurereport/plugin-server-reload";
+import { PathResultFile } from "@allurereport/reader-api";
+import { serve } from "@allurereport/static-server";
 import * as console from "node:console";
 import { rm } from "node:fs/promises";
 import { join, resolve } from "node:path";

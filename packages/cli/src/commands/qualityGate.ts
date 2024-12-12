@@ -1,4 +1,4 @@
-import { AllureReport, readRuntimeConfig } from "@allure/core";
+import { AllureReport, readRuntimeConfig } from "@allurereport/core";
 import console from "node:console";
 import process from "node:process";
 import { bold, red } from "yoctocolors";

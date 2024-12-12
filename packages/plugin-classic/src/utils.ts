@@ -1,4 +1,4 @@
-import { Statistic } from "@allure/core-api";
+import { Statistic } from "@allurereport/core-api";
 import { Allure2Status, Allure2TestResult, GroupTime, statisticKeys } from "./model.js";
 import { TreeGroup, TreeLeaf } from "./tree.js";
 

@@ -1,13 +1,13 @@
-import type { AttachmentLink, HistoryDataPoint, Statistic } from "@allure/core-api";
-import type { ReportFiles, ResultFile } from "@allure/plugin-api";
-import type { Allure2ReportOptions } from "@allure/web-classic";
+import type { AttachmentLink, HistoryDataPoint, Statistic } from "@allurereport/core-api";
+import type { ReportFiles, ResultFile } from "@allurereport/plugin-api";
+import type { Allure2ReportOptions } from "@allurereport/web-classic";
 import {
   createBaseUrlScript,
   createFaviconLinkTag,
   createReportDataScript,
   createScriptTag,
   createStylesLinkTag,
-} from "@allure/web-commons";
+} from "@allurereport/web-commons";
 import Handlebars from "handlebars";
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
@@ -71,7 +71,7 @@ const template = `<!DOCTYPE html>
 
 export const readTemplateManifest = async (singleFileMode?: boolean): Promise<TemplateManifest> => {
   const templateManifestSource = require.resolve(
-    `@allure/web-classic/dist/${singleFileMode ? "single" : "multi"}/manifest.json`,
+    `@allurereport/web-classic/dist/${singleFileMode ? "single" : "multi"}/manifest.json`,
   );
   const templateManifest = await readFile(templateManifestSource, { encoding: "utf-8" });
 
@@ -86,7 +86,7 @@ export const readManifestEntry = async (options: {
   inserter: (content: string) => string;
 }) => {
   const { fileName, singleFile, mimeType, inserter, reportFiles } = options;
-  const filePath = require.resolve(join("@allure/web-classic/dist", singleFile ? "single" : "multi", fileName));
+  const filePath = require.resolve(join("@allurereport/web-classic/dist", singleFile ? "single" : "multi", fileName));
   const scriptContentBuffer = await readFile(filePath);
 
   if (singleFile) {
@@ -115,7 +115,7 @@ export const generateStaticFiles = async (payload: {
 
   for (const key in manifest) {
     const fileName = manifest[key];
-    const filePath = require.resolve(join("@allure/web-classic/dist", singleFile ? "single" : "multi", fileName));
+    const filePath = require.resolve(join("@allurereport/web-classic/dist", singleFile ? "single" : "multi", fileName));
 
     if (key === "favicon.ico") {
       const tag = await readManifestEntry({

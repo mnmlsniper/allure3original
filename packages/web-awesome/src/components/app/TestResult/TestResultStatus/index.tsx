@@ -1,4 +1,4 @@
-import type { TestStatus } from "@allure/core-api";
+import type { TestStatus } from "@allurereport/core-api";
 import clsx from "clsx";
 import TreeItemIcon from "@/components/app/Tree/TreeItemIcon";
 import { Text } from "@/components/commons/Typography";

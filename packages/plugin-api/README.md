@@ -21,7 +21,7 @@ The interfaces in the package describe the entities used for building Allure Plu
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-api
-yarn add @allure/plugin-api
-pnpm add @allure/plugin-api
+npm add @allurereport/plugin-api
+yarn add @allurereport/plugin-api
+pnpm add @allurereport/plugin-api
 ```

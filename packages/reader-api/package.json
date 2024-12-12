@@ -1,5 +1,5 @@
 {
-  "name": "@allure/reader-api",
+  "name": "@allurereport/reader-api",
   "version": "3.0.0-beta.2",
   "description": "Allure Reader API",
   "keywords": [
@@ -25,8 +25,8 @@
     "test": "rimraf ./out && vitest run"
   },
   "dependencies": {
-    "@allure/core-api": "workspace:*",
-    "@allure/plugin-api": "workspace:*",
+    "@allurereport/core-api": "workspace:*",
+    "@allurereport/plugin-api": "workspace:*",
     "mime-types": "^2.1.35"
   },
   "devDependencies": {

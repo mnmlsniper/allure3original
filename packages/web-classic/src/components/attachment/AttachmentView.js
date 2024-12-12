@@ -1,4 +1,4 @@
-import { reportDataUrl } from "@allure/web-commons";
+import { reportDataUrl } from "@allurereport/web-commons";
 import { $ } from "backbone";
 import { View } from "backbone.marionette";
 import { behavior, className, on, regions } from "@/decorators/index.js";

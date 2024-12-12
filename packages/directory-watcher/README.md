@@ -19,7 +19,7 @@ Directory Watcher is an utility to track file system changes which supports wild
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/directory-watcher
-yarn add @allure/directory-watcher
-pnpm add @allure/directory-watcher
+npm add @allurereport/directory-watcher
+yarn add @allurereport/directory-watcher
+pnpm add @allurereport/directory-watcher
 ```

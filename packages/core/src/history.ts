@@ -1,4 +1,4 @@
-import type { HistoryDataPoint, HistoryTestResult, TestCase, TestResult } from "@allure/core-api";
+import type { HistoryDataPoint, HistoryTestResult, TestCase, TestResult } from "@allurereport/core-api";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { isFileNotFoundError } from "./utils/misc.js";

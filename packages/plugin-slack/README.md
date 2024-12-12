@@ -19,9 +19,9 @@ The plugin sends notifications about failed tests to a given Slack channel.
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/plugin-slack
-yarn add @allure/plugin-slack
-pnpm add @allure/plugin-slack
+npm add @allurereport/plugin-slack
+yarn add @allurereport/plugin-slack
+pnpm add @allurereport/plugin-slack
 ```
 
 Then, add the plugin to the Allure configuration file:

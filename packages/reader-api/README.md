@@ -19,7 +19,7 @@ The interfaces in the package describe the entities used for building Allure Rea
 Use your favorite package manager to install the package:
 
 ```shell
-npm add @allure/reader-api
-yarn add @allure/reader-api
-pnpm add @allure/reader-api
+npm add @allurereport/reader-api
+yarn add @allurereport/reader-api
+pnpm add @allurereport/reader-api
 ```

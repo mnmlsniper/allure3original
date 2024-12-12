@@ -1,4 +1,4 @@
-import type { AllureStore, Plugin, PluginContext } from "@allure/plugin-api";
+import type { AllureStore, Plugin, PluginContext } from "@allurereport/plugin-api";
 import { gray } from "yoctocolors";
 import type { LogPluginOptions } from "./model.js";
 import { printSummary, printTest } from "./utils.js";

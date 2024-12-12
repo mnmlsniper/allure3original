@@ -1,5 +1,5 @@
 {
-  "name": "@allure/reader",
+  "name": "@allurereport/reader",
   "version": "3.0.0-beta.2",
   "description": "Collection of utilities which helps to process different kind of test results as Allure Results",
   "keywords": [
@@ -24,9 +24,9 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@allure/core-api": "workspace:*",
-    "@allure/plugin-api": "workspace:*",
-    "@allure/reader-api": "workspace:*",
+    "@allurereport/core-api": "workspace:*",
+    "@allurereport/plugin-api": "workspace:*",
+    "@allurereport/reader-api": "workspace:*",
     "fast-xml-parser": "^4.5.0"
   },
   "devDependencies": {
