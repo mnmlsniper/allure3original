@@ -1,6 +1,6 @@
 {
   "name": "@allure/core",
-  "version": "0.0.1",
+  "version": "3.0.0-beta.0",
   "description": "Collection of generic Allure utilities used across the entire project",
   "keywords": [
     "allure"

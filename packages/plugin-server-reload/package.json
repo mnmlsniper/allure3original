@@ -1,6 +1,6 @@
 {
   "name": "@allure/plugin-server-reload",
-  "version": "0.0.1",
+  "version": "3.0.0-beta.0",
   "description": "Allure Plugin to reload Allure Static Server on state change",
   "keywords": [
     "allure",
