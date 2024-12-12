@@ -1,6 +1,6 @@
 {
   "name": "@allure/plugin-testplan",
-  "version": "3.0.0-beta.0",
+  "version": "3.0.0-beta.1",
   "description": "Allure Plugin to generate testplan.json",
   "keywords": [
     "allure",
