@@ -341,7 +341,6 @@ export const delayedFileProcessingWatcher = (
   // the processing delay if needed
   const doneCallback = async () => {
     for (const [file, info] of files) {
-      console.log("waiting for file", file);
       const waitedSuccessfully = await waitUntilFileStopChanging(file, info, {
         minWait: minProcessingDelay,
         maxWait: maxProcessingDelay,
