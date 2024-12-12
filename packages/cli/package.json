@@ -1,0 +1,64 @@
+{
+  "name": "allure",
+  "version": "0.0.1",
+  "description": "Allure Commandline Tool",
+  "keywords": [
+    "allure",
+    "testing",
+    "report"
+  ],
+  "repository": "https://github.com/qameta/allure3",
+  "license": "Apache-2.0",
+  "author": "Qameta Software",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./cli.js",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "run clean && tsc --project ./tsconfig.json",
+    "clean": "rimraf ./dist",
+    "start": "node ./cli.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@allure/core": "workspace:*",
+    "@allure/core-api": "workspace:*",
+    "@allure/directory-watcher": "workspace:*",
+    "@allure/plugin-awesome": "workspace:*",
+    "@allure/plugin-progress": "workspace:*",
+    "@allure/plugin-server-reload": "workspace:*",
+    "@allure/plugin-slack": "workspace:*",
+    "@allure/reader-api": "workspace:*",
+    "@allure/static-server": "workspace:*",
+    "cac": "^6.7.14",
+    "lodash.omit": "^4.5.0",
+    "yoctocolors": "^2.1.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.6.1",
+    "@types/eslint": "^8.56.11",
+    "@types/lodash.omit": "^4.5.9",
+    "@types/node": "^20.17.9",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/runner": "^2.1.8",
+    "allure-vitest": "^3.0.7",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^50.0.0",
+    "eslint-plugin-n": "^17.10.1",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

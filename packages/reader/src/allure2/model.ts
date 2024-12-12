@@ -1,0 +1,91 @@
+export interface Attachment {
+  name?: string;
+  type?: string;
+  source?: string;
+}
+
+// TODO we need to ensure case insensitive enums mapping + do not fail in case of invalid values
+
+/* eslint-disable no-shadow */
+export enum Status {
+  FAILED = "failed",
+  BROKEN = "broken",
+  PASSED = "passed",
+  SKIPPED = "skipped",
+}
+
+/* eslint-disable no-shadow */
+export enum Stage {
+  SCHEDULED = "scheduled",
+  RUNNING = "running",
+  FINISHED = "finished",
+  PENDING = "pending",
+  INTERRUPTED = "interrupted",
+}
+
+/* eslint-disable no-shadow */
+export enum ParameterMode {
+  HIDDEN = "hidden",
+  MASKED = "masked",
+  DEFAULT = "default",
+}
+
+export interface Label {
+  name?: string;
+  value?: string;
+}
+
+export interface Link {
+  name?: string;
+  url?: string;
+  type?: string;
+}
+
+export interface Parameter {
+  name?: string;
+  value?: string;
+  excluded?: boolean;
+  mode?: ParameterMode;
+}
+
+export interface StatusDetails {
+  message?: string;
+  trace?: string;
+  known?: boolean;
+  muted?: boolean;
+  flaky?: boolean;
+}
+
+interface ExecutableItem {
+  name?: string;
+  status?: Status;
+  statusDetails?: StatusDetails;
+  stage?: Stage;
+  description?: string;
+  descriptionHtml?: string;
+  steps?: StepResult[];
+  attachments?: Attachment[];
+  parameters?: Parameter[];
+  start?: number;
+  stop?: number;
+}
+
+export type FixtureResult = ExecutableItem;
+export type StepResult = ExecutableItem;
+
+export interface TestResult extends ExecutableItem {
+  uuid?: string;
+  historyId?: string;
+  fullName?: string;
+  testCaseId?: string;
+  labels?: Label[];
+  links?: Link[];
+}
+
+export interface TestResultContainer {
+  uuid?: string;
+  name?: string;
+  children?: string[];
+  befores?: FixtureResult[];
+  afters?: FixtureResult[];
+}

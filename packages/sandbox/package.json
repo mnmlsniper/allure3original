@@ -1,0 +1,37 @@
+{
+  "name": "sandbox",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A package to test another Allure Report packages in action",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "author": "Qameta Software",
+  "scripts": {
+    "pret": "rimraf ./allure-results",
+    "t": "vitest run"
+  },
+  "devDependencies": {
+    "@allure/plugin-csv": "workspace:*",
+    "@stylistic/eslint-plugin": "^2.6.1",
+    "@types/eslint": "^8.56.11",
+    "@types/node": "^20.17.9",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/runner": "^2.1.8",
+    "allure": "workspace:*",
+    "allure-js-commons": "^3.0.7",
+    "allure-vitest": "^3.0.7",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^50.0.0",
+    "eslint-plugin-n": "^17.10.1",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "yarn@4.3.1",
+  "private": true
+}

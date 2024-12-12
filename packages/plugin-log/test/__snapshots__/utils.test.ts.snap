@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`stringifyStepResultTitle > returns title with status, name and duration 1`] = `"[32m✓[39m step [33m100ms[39m"`;
+
+exports[`stringifyTestResultTitle > returns title with status, name and duration 1`] = `"[32m✓[39m [33m100ms[39m"`;
