@@ -1,7 +1,7 @@
 {
   "name": "sandbox",
   "type": "module",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "A package to test another Allure Report packages in action",
   "keywords": [],
   "license": "Apache-2.0",
