@@ -9,4 +9,4 @@ $ yarn install
 $ yarn build
 ```
 
-You can use `@allure/sandbox` as a playground for the development. Consult [README.md in the package](./packages/sandbox/README.md) for detailed instructions.
+You can use `@allurereport/sandbox` as a playground for the development. Consult [README.md in the package](./packages/sandbox/README.md) for detailed instructions.

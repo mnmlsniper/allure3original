@@ -11,7 +11,7 @@ const RAW_RUNTIME_STATE =
   ],\
   "dependencyTreeRoots": [\
     {\
-      "name": "@allure/monorepo",\
+      "name": "@allurereport/monorepo",\
       "reference": "workspace:."\
     },\
     {\
@@ -102,11 +102,11 @@ const RAW_RUNTIME_STATE =
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
-    ["@allure/monorepo", ["workspace:."]],\
     ["@allurereport/core", ["workspace:packages/core"]],\
     ["@allurereport/core-api", ["workspace:packages/core-api"]],\
     ["@allurereport/directory-watcher", ["workspace:packages/directory-watcher"]],\
     ["@allurereport/e2e", ["workspace:packages/e2e"]],\
+    ["@allurereport/monorepo", ["workspace:."]],\
     ["@allurereport/plugin-api", ["workspace:packages/plugin-api"]],\
     ["@allurereport/plugin-awesome", ["workspace:packages/plugin-awesome"]],\
     ["@allurereport/plugin-classic", ["workspace:packages/plugin-classic"]],\
@@ -133,13 +133,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@stylistic/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.11.0"],\
-          ["@trivago/prettier-plugin-sort-imports", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:4.3.0"],\
+          ["@trivago/prettier-plugin-sort-imports", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:4.3.0"],\
           ["@types/eslint", "npm:8.56.12"],\
           ["@types/node", "npm:20.17.9"],\
           ["@typescript-eslint/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
           ["@typescript-eslint/parser", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
           ["allure", "workspace:packages/cli"],\
-          ["babel-plugin-prismjs", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.1.0"],\
+          ["babel-plugin-prismjs", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.1.0"],\
           ["eslint", "npm:8.57.1"],\
           ["eslint-config-prettier", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:9.1.0"],\
           ["eslint-plugin-import", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.31.0"],\
@@ -150,38 +150,7 @@ const RAW_RUNTIME_STATE =
           ["husky", "npm:9.1.7"],\
           ["lint-staged", "npm:15.2.10"],\
           ["prettier", "npm:3.3.3"],\
-          ["prettier-plugin-packagejson", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.5.2"],\
-          ["rimraf", "npm:6.0.1"],\
-          ["tslib", "npm:2.7.0"],\
-          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
-    ["@allure/monorepo", [\
-      ["workspace:.", {\
-        "packageLocation": "./",\
-        "packageDependencies": [\
-          ["@allure/monorepo", "workspace:."],\
-          ["@stylistic/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.11.0"],\
-          ["@trivago/prettier-plugin-sort-imports", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:4.3.0"],\
-          ["@types/eslint", "npm:8.56.12"],\
-          ["@types/node", "npm:20.17.9"],\
-          ["@typescript-eslint/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
-          ["@typescript-eslint/parser", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
-          ["allure", "workspace:packages/cli"],\
-          ["babel-plugin-prismjs", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.1.0"],\
-          ["eslint", "npm:8.57.1"],\
-          ["eslint-config-prettier", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:9.1.0"],\
-          ["eslint-plugin-import", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.31.0"],\
-          ["eslint-plugin-jsdoc", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:50.6.0"],\
-          ["eslint-plugin-n", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:17.14.0"],\
-          ["eslint-plugin-no-null", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:1.0.2"],\
-          ["eslint-plugin-prefer-arrow", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:1.2.3"],\
-          ["husky", "npm:9.1.7"],\
-          ["lint-staged", "npm:15.2.10"],\
-          ["prettier", "npm:3.3.3"],\
-          ["prettier-plugin-packagejson", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.5.2"],\
+          ["prettier-plugin-packagejson", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.5.2"],\
           ["rimraf", "npm:6.0.1"],\
           ["tslib", "npm:2.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
@@ -310,6 +279,37 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-prefer-arrow", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:1.2.3"],\
           ["prettier", "npm:3.3.3"],\
           ["rimraf", "npm:6.0.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@allurereport/monorepo", [\
+      ["workspace:.", {\
+        "packageLocation": "./",\
+        "packageDependencies": [\
+          ["@allurereport/monorepo", "workspace:."],\
+          ["@stylistic/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.11.0"],\
+          ["@trivago/prettier-plugin-sort-imports", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:4.3.0"],\
+          ["@types/eslint", "npm:8.56.12"],\
+          ["@types/node", "npm:20.17.9"],\
+          ["@typescript-eslint/eslint-plugin", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
+          ["@typescript-eslint/parser", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:8.17.0"],\
+          ["allure", "workspace:packages/cli"],\
+          ["babel-plugin-prismjs", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.1.0"],\
+          ["eslint", "npm:8.57.1"],\
+          ["eslint-config-prettier", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:9.1.0"],\
+          ["eslint-plugin-import", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:2.31.0"],\
+          ["eslint-plugin-jsdoc", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:50.6.0"],\
+          ["eslint-plugin-n", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:17.14.0"],\
+          ["eslint-plugin-no-null", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:1.0.2"],\
+          ["eslint-plugin-prefer-arrow", "virtual:e545774f2ccef2393aca5c009a358532c03f065393263f9cbb3ab67366c2879624d5c1730fe5313387f3f2857386a5904c6581787f320ce570367a0ce47cf7b2#npm:1.2.3"],\
+          ["husky", "npm:9.1.7"],\
+          ["lint-staged", "npm:15.2.10"],\
+          ["prettier", "npm:3.3.3"],\
+          ["prettier-plugin-packagejson", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.5.2"],\
+          ["rimraf", "npm:6.0.1"],\
+          ["tslib", "npm:2.7.0"],\
+          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -6862,16 +6862,16 @@ const RAW_RUNTIME_STATE =
     ]],\
     ["@trivago/prettier-plugin-sort-imports", [\
       ["npm:4.3.0", {\
-        "packageLocation": "./.yarn/unplugged/@trivago-prettier-plugin-sort-imports-virtual-a8d1f30e9b/node_modules/@trivago/prettier-plugin-sort-imports/",\
+        "packageLocation": "./.yarn/unplugged/@trivago-prettier-plugin-sort-imports-virtual-0c43a891a1/node_modules/@trivago/prettier-plugin-sort-imports/",\
         "packageDependencies": [\
           ["@trivago/prettier-plugin-sort-imports", "npm:4.3.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:4.3.0", {\
-        "packageLocation": "./.yarn/unplugged/@trivago-prettier-plugin-sort-imports-virtual-a8d1f30e9b/node_modules/@trivago/prettier-plugin-sort-imports/",\
+      ["virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:4.3.0", {\
+        "packageLocation": "./.yarn/unplugged/@trivago-prettier-plugin-sort-imports-virtual-0c43a891a1/node_modules/@trivago/prettier-plugin-sort-imports/",\
         "packageDependencies": [\
-          ["@trivago/prettier-plugin-sort-imports", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:4.3.0"],\
+          ["@trivago/prettier-plugin-sort-imports", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:4.3.0"],\
           ["@babel/generator", "npm:7.17.7"],\
           ["@babel/parser", "npm:7.23.9"],\
           ["@babel/traverse", "npm:7.23.2"],\
@@ -9440,10 +9440,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-9b523df006/0/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-3536d5480d.zip/node_modules/babel-plugin-prismjs/",\
+      ["virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-deb70a91df/0/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-3536d5480d.zip/node_modules/babel-plugin-prismjs/",\
         "packageDependencies": [\
-          ["babel-plugin-prismjs", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.1.0"],\
+          ["babel-plugin-prismjs", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.1.0"],\
           ["@types/prismjs", null],\
           ["prismjs", null]\
         ],\
@@ -17794,10 +17794,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.5.2", {\
-        "packageLocation": "./.yarn/__virtual__/prettier-plugin-packagejson-virtual-7cf15399de/0/cache/prettier-plugin-packagejson-npm-2.5.2-702a288958-f280d69327.zip/node_modules/prettier-plugin-packagejson/",\
+      ["virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.5.2", {\
+        "packageLocation": "./.yarn/__virtual__/prettier-plugin-packagejson-virtual-c439493cb4/0/cache/prettier-plugin-packagejson-npm-2.5.2-702a288958-f280d69327.zip/node_modules/prettier-plugin-packagejson/",\
         "packageDependencies": [\
-          ["prettier-plugin-packagejson", "virtual:d500808593422514850315e94d789ae1ba7b9f0efc6996a55120e54e11e56c49f10d20b59f58babfb1e63049e0db0e0f97a41e7354c241b0604c7f58395170cf#npm:2.5.2"],\
+          ["prettier-plugin-packagejson", "virtual:faff2d6bbbfe8a75ffa822e4e2c9d6861f70260957cff3a04b309e5d7532cbe0f6f127e57e0b49d503fc80f26df022ab52fa403206590dff4e5ed4990a8f83a2#npm:2.5.2"],\
           ["@types/prettier", null],\
           ["prettier", "npm:3.3.3"],\
           ["sort-package-json", "npm:2.10.1"],\

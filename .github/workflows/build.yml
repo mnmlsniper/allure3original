@@ -19,9 +19,9 @@ jobs:
     - name: Install dependencies
       run: yarn install --immutable --immutable-cache --check-cache
     - name: Install playwright for static server
-      run: yarn workspace @allure/static-server playwright install chromium
+      run: yarn workspace @allurereport/static-server playwright install chromium
     - name: Install playwright for e2e
-      run: yarn workspace @allure/e2e playwright install chromium
+      run: yarn workspace @allurereport/e2e playwright install chromium
     - name: Build project
       run: yarn build
     - name: Test Project
