@@ -6,7 +6,7 @@
     "allure",
     "testing"
   ],
-  "repository": "https://github.com/qameta/allure3",
+  "repository": "https://github.com/allure-framework/allure3",
   "license": "Apache-2.0",
   "author": "Qameta Software",
   "type": "module",
