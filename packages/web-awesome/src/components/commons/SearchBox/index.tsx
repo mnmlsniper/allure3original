@@ -50,6 +50,7 @@ export const SearchBox = (props: Props) => {
         value={localValue}
         name="search"
         autocomplete="off"
+	data-testid="search-input"
       />
       {showClear && (
         <div className={styles.clearButton}>

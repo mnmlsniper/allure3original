@@ -19,7 +19,7 @@ export const ReportHeader = () => {
       <div className={styles["report-wrapper"]}>
         <ReportHeaderLogo />
         <div className={styles["report-wrapper-text"]}>
-          <Heading size={"s"} tag={"h2"} className={styles["wrapper-header"]}>
+          <Heading size={"s"} tag={"h2"} className={styles["wrapper-header"]} data-testid="report-title">
             {reportName}
           </Heading>
           <Text type="paragraph" size="m" className={styles["report-date"]}>
