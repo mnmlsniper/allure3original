@@ -1,5 +1,5 @@
-import type { AllureStaticServer } from "@allure/static-server";
-import { serve } from "@allure/static-server";
+import type { AllureStaticServer } from "@allurereport/static-server";
+import { serve } from "@allurereport/static-server";
 import { expect, test } from "@playwright/test";
 import { layer } from "allure-js-commons";
 import { Stage, Status } from "allure-js-commons";

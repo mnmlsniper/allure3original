@@ -1,5 +1,5 @@
-import { AllureReport, FileSystemReportFiles, type FullConfig } from "@allure/core";
-import AllureAwesomePlugin from "@allure/plugin-awesome";
+import { AllureReport, FileSystemReportFiles, type FullConfig } from "@allurereport/core";
+import AllureAwesomePlugin from "@allurereport/plugin-awesome";
 import { type TestResult } from "allure-js-commons";
 import { FileSystemWriter, ReporterRuntime } from "allure-js-commons/sdk/reporter";
 import { readdirSync } from "node:fs"
