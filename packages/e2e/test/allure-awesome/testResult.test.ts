@@ -1,31 +1,17 @@
-import type { AllureStaticServer } from "@allurereport/static-server";
-import { serve } from "@allurereport/static-server";
 import { expect, test } from "@playwright/test";
 import { layer } from "allure-js-commons";
 import { Stage, Status } from "allure-js-commons";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { resolve } from "node:path";
-import { generateTestResults, randomNumber } from "../utils/index.js";
+import { type ReportBootstrap, boostrapReport, randomNumber } from "../utils/index.js";
 
-let server: AllureStaticServer;
-let host: string;
-let allureTestResultsDir: string;
-let allureReportDir: string;
+let bootstrap: ReportBootstrap;
 
 test.beforeAll(async () => {
   const now = Date.now();
-  const temp = tmpdir();
 
-  allureTestResultsDir = await mkdtemp(resolve(temp, "allure-results-"));
-  allureReportDir = await mkdtemp(resolve(temp, "allure-report-"));
-
-  await generateTestResults({
+  bootstrap = await boostrapReport({
     reportConfig: {
-      name: "Sample allure report"
+      name: "Sample allure report",
     },
-    resultsDir: allureTestResultsDir,
-    reportDir: allureReportDir, 
     testResults: [
       {
         name: "0 sample passed test",
@@ -73,72 +59,62 @@ test.beforeAll(async () => {
         start: now + 4000,
         stage: Stage.PENDING,
       },
-    ]
+    ],
   });
-
-  server = await serve({
-    servePath: resolve(allureReportDir, "./awesome"),
-  });
-  host = `http://localhost:${server.port}`;
 });
 
 test.afterAll(async () => {
-  try {
-    await rm(allureTestResultsDir, { recursive: true });
-    await rm(allureReportDir, { recursive: true });
-  } catch (ignored) {}
-
-  await server?.stop();
+  await bootstrap.shutdown();
 });
 
 test.beforeEach(async ({ page }) => {
   await layer("e2e");
-  await page.goto(host);
+  await page.goto(bootstrap.url);
 });
 
 test.describe("allure-awesome", () => {
   test.describe("test results", () => {
     test("it's possible to navigate between tests results using navigation arrows", async ({ page }) => {
       const randomLeaf = page.getByTestId("tree-leaf").nth(randomNumber(0, 4));
-    
+
       await randomLeaf.click();
-    
+
       const testTitleText = await page.getByTestId("test-result-info-title").textContent();
       const navCounterText = await page.getByTestId("test-result-nav-current").textContent();
       const pressPrevArrow = await page.getByTestId("test-result-nav-next").isDisabled();
-    
+
       if (pressPrevArrow) {
         await page.getByTestId("test-result-nav-prev").click();
       } else {
         await page.getByTestId("test-result-nav-next").click();
       }
-    
+
       await expect(page.getByTestId("test-result-nav-current")).not.toHaveText(navCounterText);
       await expect(page.getByTestId("test-result-info-title")).not.toHaveText(testTitleText);
-    
+
       if (pressPrevArrow) {
         await page.getByTestId("test-result-nav-next").click();
       } else {
         await page.getByTestId("test-result-nav-prev").click();
       }
-    
+
       await expect(page.getByTestId("test-result-nav-current")).toHaveText(navCounterText);
       await expect(page.getByTestId("test-result-info-title")).toHaveText(testTitleText);
     });
-    
+
     test("test result fullname copies to clipboard", async ({ page, context }) => {
       const passedLeaf = page.getByTestId("tree-leaf").nth(0);
-    
+
       await passedLeaf.click();
       await context.grantPermissions(["clipboard-read", "clipboard-write"]);
       await page.getByTestId("test-result-fullname-copy").click();
-    
+
       const handle = await page.evaluateHandle(() => globalThis.navigator.clipboard.readText());
       const clipboardContent = await handle.jsonValue();
-    
+
       expect(clipboardContent).toEqual("sample.js#0 sample passed test");
     });
-    
+
     test("failed test contains error message and stack", async ({ page }) => {
       await page.getByTestId("tree-leaf-status-failed").click();
       await expect(page.getByTestId("test-result-error-message")).toHaveText("Assertion error: Expected 1 to be 2");
@@ -146,7 +122,7 @@ test.describe("allure-awesome", () => {
       await page.getByTestId("test-result-error-message").click();
       await expect(page.getByTestId("test-result-error-trace")).toHaveText("failed test trace");
     });
-    
+
     test("broken test contains error message and stack", async ({ page }) => {
       await page.getByTestId("tree-leaf-status-broken").click();
       await expect(page.getByTestId("test-result-error-message")).toHaveText("An unexpected error");
@@ -154,6 +130,5 @@ test.describe("allure-awesome", () => {
       await page.getByTestId("test-result-error-message").click();
       await expect(page.getByTestId("test-result-error-trace")).toHaveText("broken test trace");
     });
-  })
-})
-
+  });
+});
