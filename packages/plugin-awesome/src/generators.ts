@@ -215,7 +215,9 @@ export const generateStaticFiles = async (
   if (!payload.singleFile) {
     for (const key in manifest) {
       const fileName = manifest[key];
-      const filePath = require.resolve(join("@allurereport/web-awesome/dist", singleFile ? "single" : "multi", fileName));
+      const filePath = require.resolve(
+        join("@allurereport/web-awesome/dist", singleFile ? "single" : "multi", fileName),
+      );
 
       if (key.includes(".woff")) {
         headTags.push(createFontLinkTag(fileName));

@@ -1,4 +1,4 @@
-import {
+import type {
   AttachmentLink,
   AttachmentLinkLinked,
   HistoryDataPoint,
@@ -8,16 +8,20 @@ import {
   TestCase,
   TestFixtureResult,
   TestResult,
-  compareBy,
-  nullsLast,
-  ordinal,
-  reverse,
 } from "@allurereport/core-api";
-import { AllureStore, ResultFile, md5 } from "@allurereport/plugin-api";
-import type { RawFixtureResult, RawMetadata, RawTestResult, ReaderContext, ResultsVisitor } from "@allurereport/reader-api";
-import { EventEmitter } from "node:events";
+import { compareBy, nullsLast, ordinal, reverse } from "@allurereport/core-api";
+import type { AllureStore, ResultFile } from "@allurereport/plugin-api";
+import { md5 } from "@allurereport/plugin-api";
+import type {
+  RawFixtureResult,
+  RawMetadata,
+  RawTestResult,
+  ReaderContext,
+  ResultsVisitor,
+} from "@allurereport/reader-api";
+import type { EventEmitter } from "node:events";
 import { extname } from "node:path";
-import { AllureStoreEvents } from "../utils/event.js";
+import type { AllureStoreEvents } from "../utils/event.js";
 import { testFixtureResultRawToState, testResultRawToState } from "./convert.js";
 
 const index = <T>(indexMap: Map<string, T[]>, key: string | undefined, ...items: T[]) => {
@@ -201,7 +205,6 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
   }
 
   async allHistoryDataPoints(): Promise<HistoryDataPoint[]> {
-    console.log(this.#history);
     return this.#history;
   }
 
@@ -250,7 +253,6 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
   }
 
   async historyByTrId(trId: string): Promise<HistoryTestResult[]> {
-    console.log(this.#history);
     const tr = await this.testResultById(trId);
 
     if (!tr?.historyId) {
