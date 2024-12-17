@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ComponentChildren } from "preact";
+import type { ComponentChildren } from "preact";
 import lineChevronDownIcon from "@/assets/svg/line-arrows-chevron-down.svg";
 import sortAscIcon from "@/assets/svg/line-arrows-sort-line-asc.svg";
 import sortDescIcon from "@/assets/svg/line-arrows-sort-line-desc.svg";
@@ -92,7 +92,7 @@ export const SortBy = () => {
                 <Menu.Item
                   closeMenuOnClick={false}
                   onClick={onClick}
-                  leadingIcon={direction == "asc" ? sortAscIcon.id : sortDescIcon.id}
+                  leadingIcon={direction === "asc" ? sortAscIcon.id : sortDescIcon.id}
                   rightSlot={
                     <BtnWrapper>
                       <DropdownButton
