@@ -23,7 +23,7 @@ export const Toggle = (props: Props) => {
       type="checkbox"
       checked={value}
       aria-label={label}
-      onChange={handleChange}
+      onToggle={handleChange}
     />
   );
 };

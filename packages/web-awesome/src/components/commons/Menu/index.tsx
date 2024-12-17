@@ -1,11 +1,28 @@
 import { autoUpdate, computePosition, flip, offset, shift } from "@floating-ui/dom";
 import { clsx } from "clsx";
 import type { ComponentChildren, VNode } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { createContext } from "preact";
+import { useContext, useEffect, useRef, useState } from "preact/hooks";
 import check from "@/assets/svg/line-general-check.svg";
 import { SvgIcon } from "@/components/commons/SvgIcon";
 import { Text } from "@/components/commons/Typography";
 import * as styles from "./styles.scss";
+
+type MenuContextT = {
+  setIsOpened: (isOpened: boolean) => void;
+};
+
+const MenuContext = createContext<MenuContextT | null>(null);
+
+export const useMenuContext = () => {
+  const context = useContext(MenuContext);
+
+  if (!context) {
+    throw new Error("useMenuContext must be used within a Menu");
+  }
+
+  return context;
+};
 
 export const Menu = (props: {
   children: ComponentChildren;
@@ -96,20 +113,26 @@ export const Menu = (props: {
   }, [menuRef.current, triggerRef.current]);
 
   return (
-    <>
-      {typeof menuTrigger === "function" && (
-        <MenuTriggerWrapper ref={triggerRef}>
-          {menuTrigger({
-            isOpened,
-            onClick: handleTriggerClick,
-            setIsOpened,
-          })}
-        </MenuTriggerWrapper>
-      )}
-      <div ref={menuRef}>
-        {isOpened && <aside className={clsx(styles.menu, styles[`size-${size}`])}>{children}</aside>}
-      </div>
-    </>
+    <MenuContext.Provider
+      value={{
+        setIsOpened,
+      }}
+    >
+      <>
+        {typeof menuTrigger === "function" && (
+          <MenuTriggerWrapper ref={triggerRef}>
+            {menuTrigger({
+              isOpened,
+              onClick: handleTriggerClick,
+              setIsOpened,
+            })}
+          </MenuTriggerWrapper>
+        )}
+        <div ref={menuRef}>
+          {isOpened && <aside className={clsx(styles.menu, styles[`size-${size}`])}>{children}</aside>}
+        </div>
+      </>
+    </MenuContext.Provider>
   );
 };
 
@@ -128,6 +151,7 @@ type ItemProps = {
 };
 
 Menu.Item = (props: ItemProps) => {
+  const { setIsOpened } = useMenuContext();
   const { children, onClick, leadingIcon, rightSlot, ariaLabel, closeMenuOnClick = true } = props;
   const isInteractive = typeof onClick === "function";
   const hasLeadingIcon = typeof leadingIcon === "string";
@@ -135,6 +159,7 @@ Menu.Item = (props: ItemProps) => {
   const handleItemClick = (e: MouseEvent) => {
     if (isInteractive && closeMenuOnClick) {
       e.stopPropagation();
+      setIsOpened(false);
     }
 
     if (isInteractive) {
