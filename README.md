@@ -43,12 +43,10 @@ export default defineConfig({
   output: "./allure-report",
   historyPath: "./history.jsonl",
   plugins: {
-    "allure-awesome": {
+    awesome: {
       options: {
-        reportName: "HelloWorld",
         singleFile: true,
         reportLanguage: "en",
-        open: true,
       },
     },
   },
