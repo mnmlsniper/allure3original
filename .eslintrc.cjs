@@ -129,7 +129,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars": ["error", { caughtErrors: "none" }],
+    "@typescript-eslint/no-unused-vars": ["error", { caughtErrors: "none", ignoreRestSiblings: true }],
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-for-of": "error",
@@ -137,7 +137,7 @@ module.exports = {
     "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/prefer-promise-reject-errors": "off",
-    "@stylistic/quotes": ["error", "double"],
+    "@stylistic/quotes": ["error", "double", { avoidEscape: true }],
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/restrict-template-expressions": [
       "error",
@@ -168,11 +168,11 @@ module.exports = {
     "arrow-body-style": "off",
     "arrow-parens": ["off", "always"],
     "brace-style": ["error", "1tbs"],
-    complexity: "off",
+    "complexity": "off",
     "constructor-super": "error",
-    curly: "error",
+    "curly": "error",
     "eol-last": "error",
-    eqeqeq: ["error", "smart"],
+    "eqeqeq": ["error", "smart"],
     "guard-for-in": "off",
     "id-blacklist": [
       "error",
@@ -230,7 +230,7 @@ module.exports = {
     "prefer-const": "error",
     "prefer-template": "error",
     "quote-props": ["error", "consistent-as-needed"],
-    radix: "error",
+    "radix": "error",
     "space-before-function-paren": [
       "error",
       {
