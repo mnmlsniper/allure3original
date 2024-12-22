@@ -1,12 +1,13 @@
-import type {
-  Comparator,
-  DefaultTreeGroup,
-  DefaultTreeLeaf,
-  TestResult,
-  TreeData,
-  TreeGroup,
-  TreeLeaf,
-  WithChildren,
+import {
+  type Comparator,
+  type DefaultTreeGroup,
+  type DefaultTreeLeaf,
+  type TestResult,
+  type TreeData,
+  type TreeGroup,
+  type TreeLeaf,
+  type WithChildren,
+  findByLabelName,
 } from "@allurereport/core-api";
 import { emptyStatistic, incrementStatistic } from "@allurereport/core-api";
 import { md5 } from "./misc.js";
@@ -98,6 +99,13 @@ export const byLabels = (item: TestResult, labelNames: string[]): string[][] => 
     (labelName) =>
       item.labels.filter((label) => labelName === label.name).map((label) => label.value ?? "__unknown") ?? [],
   );
+};
+
+export const filterTreeLabels = (data: TestResult[], labelNames: string[]) => {
+  return [...labelNames]
+    .reverse()
+    .filter((labelName) => data.find((item) => findByLabelName(item.labels, labelName)))
+    .reverse();
 };
 
 export const createTreeByLabels = (data: TestResult[], labelNames: string[]) => {

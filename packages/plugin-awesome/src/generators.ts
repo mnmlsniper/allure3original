@@ -224,6 +224,7 @@ export const generateStaticFiles = async (
     singleFile,
     logo = "",
     theme = "light",
+    groupBy,
     reportFiles,
     reportDataFiles,
     reportUuid,
@@ -276,6 +277,7 @@ export const generateStaticFiles = async (
     reportLanguage,
     createdAt: Date.now(),
     reportUuid,
+    groupBy: groupBy?.length ? groupBy : ["parentSuite", "suite", "subSuite"],
   };
   const html = compile({
     headTags: headTags.join("\n"),

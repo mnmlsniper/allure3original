@@ -10,11 +10,12 @@ type AwesomeCommandOptions = {
   singleFile?: boolean;
   historyPath?: string;
   knownIssues?: string;
+  groupBy?: string;
 };
 
 export const AwesomeCommandAction = async (resultsDir: string, options: AwesomeCommandOptions) => {
   const before = new Date().getTime();
-  const { output, reportName: name, historyPath, knownIssues: knownIssuesPath, ...rest } = options;
+  const { output, reportName: name, historyPath, knownIssues: knownIssuesPath, groupBy, ...rest } = options;
   const config = await resolveConfig({
     output,
     name,
@@ -22,7 +23,10 @@ export const AwesomeCommandAction = async (resultsDir: string, options: AwesomeC
     knownIssuesPath,
     plugins: {
       "@allurereport/plugin-awesome": {
-        options: rest,
+        options: {
+          ...rest,
+          groupBy: groupBy?.split(","),
+        },
       },
     },
   });
@@ -90,6 +94,13 @@ export const AwesomeCommand = createCommand({
         description: "Path to the known issues file. Updates the file and quarantines failed tests when specified",
       },
     ],
+    [
+      "--group-by, -g <string>",
+      {
+        description: "Group test results by labels. The labels should be separated by commas",
+        default: "parentSuite,suite,subSuite",
+      }
+    ]
   ],
   action: AwesomeCommandAction,
 });

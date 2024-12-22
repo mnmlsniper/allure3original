@@ -1,4 +1,4 @@
-import { type EnvironmentItem, findByLabelName } from "@allurereport/core-api";
+import { type EnvironmentItem } from "@allurereport/core-api";
 import type { AllureStore, Plugin, PluginContext } from "@allurereport/plugin-api";
 import {
   generateAttachmentsFiles,
@@ -19,7 +19,7 @@ export class AllureAwesomePlugin implements Plugin {
   constructor(readonly options: AllureAwesomePluginOptions = {}) {}
 
   #generate = async (context: PluginContext, store: AllureStore) => {
-    const { singleFile } = this.options ?? {};
+    const { singleFile, groupBy } = this.options ?? {};
     const environmentItems = await store.metadataByKey<EnvironmentItem[]>("allure_environment");
     const statistic = await store.testsStatistic();
     const allTr = await store.allTestResults({ includeHidden: true });
@@ -27,15 +27,13 @@ export class AllureAwesomePlugin implements Plugin {
 
     await generateStatistic(this.#writer!, statistic);
     await generatePieChart(this.#writer!, statistic);
-
-    const noParentSuite = allTr.find((tr) => findByLabelName(tr.labels, "parentSuite")) === undefined;
-
     await generateTree(
       this.#writer!,
-      "suites",
-      noParentSuite ? ["suite", "subSuite"] : ["parentSuite", "suite", "subSuite"],
+      "tree",
+      groupBy?.length ? groupBy : ["parentSuite", "suite", "subSuite"],
       allTr,
     );
+
     await generateTestResults(this.#writer!, store);
     await generateHistoryDataPoints(this.#writer!, store);
 
