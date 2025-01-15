@@ -146,6 +146,36 @@ export const createTreeByLabels = <T = TestResult, L = DefaultTreeLeaf, G = Defa
 };
 
 /**
+ * Omits labels that don't exist in the given test results
+ * If label is present at least in one test result, it will be included
+ * @param labelNames
+ * @param trs
+ * @param labelNamesAccessor
+ */
+export const preciseTreeLabels = <T = TestResult>(
+  labelNames: string[],
+  trs: T[],
+  labelNamesAccessor: (tr: T) => string[] = (tr: T) => (tr as TestResult).labels.map(({ name }) => name),
+) => {
+  const result = new Set<string>();
+
+  for (const tr of trs) {
+    // break the loop if all the labels are found
+    if (labelNames.every((label) => result.has(label))) {
+      break;
+    }
+
+    labelNamesAccessor(tr).forEach((label) => {
+      if (labelNames.includes(label)) {
+        result.add(label);
+      }
+    });
+  }
+
+  return Array.from(result);
+};
+
+/**
  * Mutates the given tree by filtering leaves in each group.
  * Returns the link to the same tree.
  * @param tree
