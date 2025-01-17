@@ -68,14 +68,10 @@ export const testFixtureResultRawToState = (
 
 export const testResultRawToState = (stateData: StateData, raw: RawTestResult, context: ReaderContext): TestResult => {
   const labels = convertLabels(raw.labels);
-
   const hostId = findByLabelName(labels, "host");
   const threadId = findByLabelName(labels, "thread");
-
   const name = raw.name || "Unknown test";
-
   const testCase = processTestCase(stateData, raw);
-
   const parameters = convertParameters(raw.parameters);
 
   return {

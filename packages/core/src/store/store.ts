@@ -10,7 +10,7 @@ import type {
   TestResult,
 } from "@allurereport/core-api";
 import { compareBy, nullsLast, ordinal, reverse } from "@allurereport/core-api";
-import type { AllureStore, ResultFile } from "@allurereport/plugin-api";
+import type { AllureStore, DefaultLabelsConfig, ResultFile } from "@allurereport/plugin-api";
 import { md5 } from "@allurereport/plugin-api";
 import type {
   RawFixtureResult,
@@ -42,6 +42,7 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
   readonly #history: HistoryDataPoint[];
   readonly #known: KnownTestFailure[];
   readonly #fixtures: Map<string, TestFixtureResult>;
+  readonly #defaultLabels: DefaultLabelsConfig = {};
   readonly #eventEmitter?: EventEmitter<AllureStoreEvents>;
 
   readonly indexTestResultByTestCase: Map<string, TestResult[]> = new Map<string, TestResult[]>();
@@ -52,11 +53,14 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
   readonly indexFixturesByTestResult: Map<string, TestFixtureResult[]> = new Map<string, TestFixtureResult[]>();
   readonly indexKnownByHistoryId: Map<string, KnownTestFailure[]> = new Map<string, KnownTestFailure[]>();
 
-  constructor(
-    history: HistoryDataPoint[] = [],
-    known: KnownTestFailure[] = [],
-    eventEmitter?: EventEmitter<AllureStoreEvents>,
-  ) {
+  constructor(params?: {
+    history?: HistoryDataPoint[];
+    known?: KnownTestFailure[];
+    eventEmitter?: EventEmitter<AllureStoreEvents>;
+    defaultLabels?: DefaultLabelsConfig;
+  }) {
+    const { history = [], known = [], eventEmitter, defaultLabels } = params ?? {};
+
     this.#testResults = new Map<string, TestResult>();
     this.#attachments = new Map<string, AttachmentLink>();
     this.#attachmentContents = new Map<string, ResultFile>();
@@ -67,6 +71,7 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
     this.#known = [...known];
     this.#known.forEach((ktf) => index(this.indexKnownByHistoryId, ktf.historyId, ktf));
     this.#eventEmitter = eventEmitter;
+    this.#defaultLabels = defaultLabels ?? {};
   }
 
   // test methods
@@ -84,6 +89,24 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
       raw,
       context,
     );
+
+    const defaultLabelsNames = Object.keys(this.#defaultLabels);
+
+    if (defaultLabelsNames.length) {
+      defaultLabelsNames.forEach((labelName) => {
+        if (!testResult.labels.find((label) => label.name === labelName)) {
+          const defaultLabelValue = this.#defaultLabels[labelName];
+
+          // concat method works both with single value and arrays, so we can use it here in this way
+          ([] as string[]).concat(defaultLabelValue as string[]).forEach((labelValue) => {
+            testResult.labels.push({
+              name: labelName,
+              value: labelValue,
+            });
+          });
+        }
+      });
+    }
 
     this.#testResults.set(testResult.id, testResult);
 
