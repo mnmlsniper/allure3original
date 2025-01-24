@@ -56,14 +56,32 @@ export interface ConfigOverride {
   knownIssuesPath?: string;
 }
 
-export const readConfig = async (
-  cwd: string = process.cwd(),
-  configPath?: string,
-  override?: ConfigOverride,
-): Promise<FullConfig> => {
-  const cfg = await findConfig(cwd, configPath);
-  const config = cfg ? await loadConfig(cfg) : { ...defaultConfig };
-  return await resolveConfig(config, override);
+/**
+ * Validates the provided config
+ * At this moment supports unknown fields check only
+ * @example
+ * ```js
+ * validateConfig({ name: "Allure" }) // { valid: true }
+ * validateConfig({ name: "Allure", unknownField: "value" }) // { valid: false, fields: ["unknownField"] }
+ * ```
+ * @param config
+ */
+export const validateConfig = (config: Config) => {
+  const supportedFields: (keyof Config)[] = [
+    "name",
+    "output",
+    "historyPath",
+    "knownIssuesPath",
+    "qualityGate",
+    "plugins",
+    "defaultLabels",
+  ];
+  const unsupportedFields = Object.keys(config).filter((key) => !supportedFields.includes(key as keyof Config));
+
+  return {
+    valid: unsupportedFields.length === 0,
+    fields: unsupportedFields,
+  };
 };
 
 export const loadConfig = async (configPath: string): Promise<Config> => {
@@ -71,15 +89,27 @@ export const loadConfig = async (configPath: string): Promise<Config> => {
 };
 
 export const resolveConfig = async (config: Config, override: ConfigOverride = {}): Promise<FullConfig> => {
+  const validationResult = validateConfig(config);
+
+  if (!validationResult.valid) {
+    throw new Error(`The provided Allure config contains unsupported fields: ${validationResult.fields.join(", ")}`);
+  }
+
   const name = override.name ?? config.name ?? "Allure Report";
   const historyPath = resolve(override.historyPath ?? config.historyPath ?? "./.allure/history.jsonl");
   const knownIssuesPath = resolve(override.knownIssuesPath ?? config.knownIssuesPath ?? "./allure/known.json");
   const output = resolve(override.output ?? config.output ?? "./allure-report");
-
   const history = await readHistory(historyPath);
   const known = await readKnownIssues(knownIssuesPath);
-
-  const pluginInstances = await resolvePlugins(config.plugins ?? {});
+  const plugins =
+    Object.keys(config?.plugins ?? {}).length === 0
+      ? {
+          awesome: {
+            options: {},
+          },
+        }
+      : config.plugins!;
+  const pluginInstances = await resolvePlugins(plugins);
 
   return {
     name,
@@ -92,6 +122,17 @@ export const resolveConfig = async (config: Config, override: ConfigOverride = {
     known,
     qualityGate: config.qualityGate,
   };
+};
+
+export const readConfig = async (
+  cwd: string = process.cwd(),
+  configPath?: string,
+  override?: ConfigOverride,
+): Promise<FullConfig> => {
+  const cfg = await findConfig(cwd, configPath);
+  const config = cfg ? await loadConfig(cfg) : { ...defaultConfig };
+
+  return await resolveConfig(config, override);
 };
 
 export const resolvePlugin = async (path: string) => {
