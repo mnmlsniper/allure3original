@@ -102,6 +102,7 @@ const runTests = async (
   }
 
   await processWatcher.abort();
+  return code;
 };
 
 export const RunCommandAction = async (options: RunCommandOptions) => {
@@ -112,10 +113,10 @@ export const RunCommandAction = async (options: RunCommandOptions) => {
   }
 
   const before = new Date().getTime();
-  process.on("exit", (code) => {
+  process.on("exit", (exitCode) => {
     const after = new Date().getTime();
 
-    console.log(`exit code ${code} (${after - before}ms)`);
+    console.log(`exit code ${exitCode} (${after - before}ms)`);
   });
 
   const command = args[0];
@@ -157,7 +158,7 @@ export const RunCommandAction = async (options: RunCommandOptions) => {
 
   await allureReport.start();
 
-  await runTests(allureReport, cwd, command, commandArgs, {}, silent);
+  let code = await runTests(allureReport, cwd, command, commandArgs, {}, silent);
 
   for (let rerun = 0; rerun < maxRerun; rerun++) {
     const failed = await allureReport.store.failedTestResults();
@@ -176,7 +177,7 @@ export const RunCommandAction = async (options: RunCommandOptions) => {
     const testPlanPath = resolve(tmpDir, `${rerun}-testplan.json`);
     await writeFile(testPlanPath, JSON.stringify(testPlan));
 
-    await runTests(
+    code = await runTests(
       allureReport,
       cwd,
       command,
@@ -195,7 +196,7 @@ export const RunCommandAction = async (options: RunCommandOptions) => {
   await allureReport.done();
   await allureReport.validate();
 
-  process.exit(allureReport.exitCode);
+  process.exit(code ?? allureReport.exitCode);
 };
 
 export const RunCommand = createCommand({
