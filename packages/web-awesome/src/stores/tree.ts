@@ -1,12 +1,14 @@
 import { fetchReportJsonData } from "@allurereport/web-commons";
-import { computed, signal } from "@preact/signals";
+import { computed, effect, signal } from "@preact/signals";
 import type { AllureAwesomeStatus, AllureAwesomeTree, AllureAwesomeTreeGroup } from "types";
 import type { StoreSignalState } from "@/stores/types";
+import { loadFromLocalStorage } from "@/utils/loadFromLocalStorage";
 import { createRecursiveTree, isRecursiveTreeEmpty } from "@/utils/treeFilters";
 
 export type TreeSortBy = "order" | "duration" | "status" | "alphabet";
 export type TreeDirection = "asc" | "desc";
 export type TreeFilters = "flaky" | "retry" | "new";
+
 export type TreeFiltersState = {
   query: string;
   status: AllureAwesomeStatus;
@@ -23,16 +25,45 @@ export const treeStore = signal<StoreSignalState<AllureAwesomeTree>>({
 
 export const noTests = computed(() => !Object.keys(treeStore?.value?.data?.leavesById).length);
 
-export const treeFiltersStore = signal<TreeFiltersState>({
-  query: "",
-  status: "total",
-  filter: {
-    flaky: false,
-    retry: false,
-    new: false,
-  },
-  sortBy: "order",
-  direction: "asc",
+const loadedFromLS = loadFromLocalStorage<string[]>("collapsedTrees", []);
+export const collapsedTrees = signal(new Set(loadedFromLS as string[]));
+
+effect(() => {
+  localStorage.setItem("collapsedTrees", JSON.stringify([...collapsedTrees.value]));
+});
+
+export const toggleTree = (id: string) => {
+  const newSet = new Set(collapsedTrees.value);
+  if (newSet.has(id)) {
+    newSet.delete(id);
+  } else {
+    newSet.add(id);
+  }
+  collapsedTrees.value = newSet;
+};
+
+export const selectedFilters = signal(new Set(loadFromLocalStorage("selectedFilters", []) as []));
+
+effect(() => {
+  localStorage.setItem("selectedFilters", JSON.stringify([...selectedFilters.value]));
+});
+
+export const treeFiltersStore = signal<TreeFiltersState>(
+  loadFromLocalStorage<TreeFiltersState>("treeFilters", {
+    query: "",
+    status: "total",
+    filter: {
+      flaky: false,
+      retry: false,
+      new: false,
+    },
+    sortBy: "order",
+    direction: "asc",
+  }) as TreeFiltersState,
+);
+
+effect(() => {
+  localStorage.setItem("treeFilters", JSON.stringify(treeFiltersStore.value));
 });
 
 export const filteredTree = computed(() => {

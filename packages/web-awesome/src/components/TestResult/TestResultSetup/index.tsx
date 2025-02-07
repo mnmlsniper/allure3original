@@ -7,6 +7,7 @@ import * as styles from "@/components/TestResult/TestResultSteps/styles.scss";
 import { TestResultAttachment } from "@/components/TestResult/TestResultSteps/testResultAttachment";
 import { TestResultStep } from "@/components/TestResult/TestResultSteps/testResultStep";
 import { useI18n } from "@/stores/locale";
+import { collapsedTrees, toggleTree } from "@/stores/tree";
 
 const typeMap = {
   before: TestResultStep,
@@ -17,10 +18,18 @@ const typeMap = {
 
 export type TestResultSetupProps = {
   setup: AllureAwesomeTestResult["setup"];
+  id?: string;
 };
 
-export const TestResultSetup: FunctionalComponent<TestResultSetupProps> = ({ setup }) => {
-  const [isOpened, setIsOpen] = useState(false);
+export const TestResultSetup: FunctionalComponent<TestResultSetupProps> = ({ setup, id }) => {
+  const teardownId = `${id}-setup`;
+  const isEarlyCollapsed = Boolean(!collapsedTrees.value.has(teardownId));
+  const [isOpened, setIsOpen] = useState<boolean>(isEarlyCollapsed);
+
+  const handleClick = () => {
+    setIsOpen(!isOpened);
+    toggleTree(teardownId);
+  };
   const { t } = useI18n("execution");
 
   return (
@@ -28,7 +37,7 @@ export const TestResultSetup: FunctionalComponent<TestResultSetupProps> = ({ set
       <TestResultDropdown
         icon={allureIcons.lineTimeClockStopwatch}
         isOpened={isOpened}
-        setIsOpen={setIsOpen}
+        setIsOpen={handleClick}
         counter={setup?.length}
         title={t("setup")}
       />
