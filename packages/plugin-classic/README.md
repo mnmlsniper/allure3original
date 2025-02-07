@@ -12,7 +12,7 @@
 
 ## Overview
 
-The plugin generates a classic Allure Report.
+The plugin generates brand new Allure Report with modern design and new features.
 
 ## Install
 
@@ -51,4 +51,7 @@ The plugin accepts the following options:
 |------------------|-------------------------------------------------|--------------------------------------------------------------|-----------------|
 | `reportName`     | Name of the report                              | `string`                                                     | `Allure Report` |
 | `singleFile`     | Writes the report as a single `index.html` file | `boolean`                                                    | `false`         |
+| `logo`           | Path to the logo image                          | `string`                                                     | `null`          |
+| `theme`          | Default color theme of the report               | `light \| dark`                                              | OS theme        |
 | `reportLanguage` | Default language of the report                  | `string`                                                     | OS language     |
+| `ci`             | CI data which will be rendered in the report    | `{ type: "github" \| "jenkins", url: string, name: string }` | `undefined`     |
