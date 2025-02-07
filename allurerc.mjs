@@ -11,13 +11,6 @@ export default defineConfig({
         groupBy: ["module", "parentSuite", "suite", "subSuite"],
       },
     },
-    allure2: {
-      options: {
-        singleFile: true,
-        reportLanguage: "en",
-        groupBy: ["module", "parentSuite", "suite", "subSuite"],
-      },
-    },
     log: {
       options: {
         groupBy: "none",
