@@ -27,7 +27,7 @@ export default defineConfig([
         sourcemap: true,
       },
     ],
-    external: ["preact", "preact/hooks"],
+    external: ["preact", "preact/hooks", "react", "react-dom"],
     plugins: [
       alias({
         entries: [
@@ -46,6 +46,7 @@ export default defineConfig([
         babelHelpers: "bundled",
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         exclude: ["**", "**/*.test.tsx", "**/*.test.ts"],
+        jsx: true,
       }),
       svg(),
       postcss({
@@ -72,7 +73,7 @@ export default defineConfig([
         format: "es",
       },
     ],
-    external: ["preact", "preact/hooks", /\.s?css$/],
+    external: ["preact", "preact/hooks", "react", "react-dom", /\.s?css$/],
     plugins: [dts()],
   },
 ]);

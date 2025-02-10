@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/preact-webpack5";
 import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "path";
+import { dirname, join } from "path";
 
 /**
  * This function is used to resolve the absolute path of a package.
