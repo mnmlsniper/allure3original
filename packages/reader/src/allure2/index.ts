@@ -160,6 +160,8 @@ const processTestResult = async (visitor: ResultsVisitor, result: Partial<TestRe
     status: convertStatus(result.status),
     message: ensureString(result?.statusDetails?.message),
     trace: ensureString(result?.statusDetails?.trace),
+    actual: ensureString(result?.statusDetails?.actual, ""),
+    expected: ensureString(result?.statusDetails?.expected, ""),
     flaky: ensureBoolean(result?.statusDetails?.flaky),
     known: ensureBoolean(result?.statusDetails?.known),
     muted: ensureBoolean(result?.statusDetails?.muted),

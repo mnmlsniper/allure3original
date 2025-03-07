@@ -55,6 +55,7 @@ export const testFixtureResultRawToState = (
     error: {
       message: raw.message,
       trace: raw.trace,
+      ...(raw.actual && raw.expected ? { expected: raw.expected, actual: raw.actual } : {}),
     },
 
     ...processTimings(raw),
@@ -88,6 +89,7 @@ export const testResultRawToState = (stateData: StateData, raw: RawTestResult, c
     error: {
       message: raw.message,
       trace: raw.trace,
+      ...(raw.actual && raw.expected ? { expected: raw.expected, actual: raw.actual } : {}),
     },
 
     ...processTimings(raw),
