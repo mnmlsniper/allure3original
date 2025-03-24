@@ -97,7 +97,8 @@
     "showLess": "ნაკლების ჩვენება",
     "showMore": "მეტის ჩვენება",
     "copy": "კოპირება",
-    "at": "ზე"
+    "at": "ზე",
+    "openPwTrace": "გახსენი Playwright Trace"
   },
   "controls": {
     "newTabAttachment": "დანართის გახსნა ახალ ჩანართში",

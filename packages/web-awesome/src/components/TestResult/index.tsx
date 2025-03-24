@@ -1,59 +1,59 @@
 import clsx from "clsx";
 import type { FunctionComponent, FunctionalComponent } from "preact";
 import type { AwesomeTestResult } from "types";
-import { TestResultAttachmentView } from "@/components/TestResult/TestResultAttachmentsView";
-import TestResultEmpty from "@/components/TestResult/TestResultEmpty";
-import { TestResultHeader } from "@/components/TestResult/TestResultHeader";
-import TestResultHistoryView from "@/components/TestResult/TestResultHistory";
-import { TestResultInfo } from "@/components/TestResult/TestResultInfo";
-import { TestResultOverview } from "@/components/TestResult/TestResultOverview";
-import { TestResultRetriesView } from "@/components/TestResult/TestResultRetriesView";
-import { TestResultTabs, useTestResultTabsContext } from "@/components/TestResult/TestResultTabs";
+import { TrAttachmentView } from "@/components/TestResult/TrAttachmentsView";
+import TrEmpty from "@/components/TestResult/TrEmpty";
+import { TrHeader } from "@/components/TestResult/TrHeader";
+import TrHistoryView from "@/components/TestResult/TrHistory";
+import { TrInfo } from "@/components/TestResult/TrInfo";
+import { TrOverview } from "@/components/TestResult/TrOverview";
+import { TrRetriesView } from "@/components/TestResult/TrRetriesView";
+import { TrTabs, useTestResultTabsContext } from "@/components/TestResult/TrTabs";
 import { isSplitMode } from "@/stores/layout";
 import * as styles from "./styles.scss";
 
-export type TestResultViewProps = {
+export type TrViewProps = {
   testResult?: AwesomeTestResult;
 };
 
-const TestResultView: FunctionalComponent<TestResultViewProps> = ({ testResult }) => {
+export type TrContentProps = {
+  testResult?: AwesomeTestResult;
+};
+
+export type TrProps = {
+  testResult?: AwesomeTestResult;
+};
+
+const TrView: FunctionalComponent<TrViewProps> = ({ testResult }) => {
   const { currentTab } = useTestResultTabsContext();
   const viewMap: Record<string, any> = {
-    overview: TestResultOverview,
-    history: TestResultHistoryView,
-    attachments: TestResultAttachmentView,
-    retries: TestResultRetriesView,
+    overview: TrOverview,
+    history: TrHistoryView,
+    attachments: TrAttachmentView,
+    retries: TrRetriesView,
   };
   const ViewComponent = viewMap[currentTab];
 
   return <ViewComponent testResult={testResult} />;
 };
 
-export type TestResultContentProps = {
-  testResult?: AwesomeTestResult;
-};
-
-const TestResultContent: FunctionalComponent<TestResultContentProps> = ({ testResult }) => {
+const TrContent: FunctionalComponent<TrContentProps> = ({ testResult }) => {
   return (
-    <TestResultTabs initialTab="overview">
-      <TestResultInfo testResult={testResult} />
-      <TestResultView testResult={testResult} />
-    </TestResultTabs>
+    <TrTabs initialTab="overview">
+      <TrInfo testResult={testResult} />
+      <TrView testResult={testResult} />
+    </TrTabs>
   );
 };
 
-export type TestResultProps = {
-  testResult?: AwesomeTestResult;
-};
-
-const TestResult: FunctionComponent<TestResultProps> = ({ testResult }) => {
+const TestResult: FunctionComponent<TrProps> = ({ testResult }) => {
   const splitModeClass = isSplitMode.value ? styles["scroll-inside"] : "";
 
   return (
     <>
-      {!isSplitMode.value && <TestResultHeader testResult={testResult} />}
+      {!isSplitMode.value && <TrHeader testResult={testResult} />}
       <div className={clsx(styles.content, splitModeClass)}>
-        {testResult ? <TestResultContent testResult={testResult} /> : <TestResultEmpty />}
+        {testResult ? <TrContent testResult={testResult} /> : <TrEmpty />}
       </div>
     </>
   );

@@ -97,7 +97,8 @@
     "showLess": "Daha az göster",
     "showMore": "Daha fazla göster",
     "copy": "Kopyala",
-    "at": "tarihinde"
+    "at": "tarihinde",
+    "openPwTrace": "Playwright Trace'i aç"
   },
   "controls": {
     "newTabAttachment": "Eki yeni sekmede aç",
