@@ -11,7 +11,10 @@ import { copyToClipboard } from "@/utils/copyToClipboard";
 import * as styles from "./styles.scss";
 
 const TrErrorTrace = ({ trace }: { trace: string }) => {
-  const ansiTrace = new AnsiToHtml().toHtml(trace);
+  const ansiTrace = new AnsiToHtml({
+    fg: "var(--on-text-primary)",
+    colors: {},
+  }).toHtml(trace);
   return (
     <div data-testid="test-result-error-trace" className={styles["test-result-error-trace"]}>
       <Code size={"s"} type={"ui"}>
@@ -75,7 +78,7 @@ export const TrError: FunctionalComponent<TestError & { status: TestStatus }> = 
         empty("no-message-provided")
       )}
 
-      {Boolean(actual && expected) && (
+      {Boolean(actual && actual !== "undefined" && expected && expected !== "undefined") && (
         <Button
           style={"flat"}
           data-testId={"test-result-diff-button"}
