@@ -12,11 +12,11 @@ export type GeneratorParams = {
   resultsDir: string;
   testResults: Partial<TestResult>[];
   reportConfig?: Omit<FullConfig, "output" | "reportFiles">;
-  pluginConfig?: any;
 };
 
 export interface ReportBootstrap {
   url: string;
+  reportDir: string;
   shutdown: () => Promise<void>;
 }
 
@@ -28,19 +28,9 @@ export const randomNumber = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
 };
 
-export const generateTestResults = async (payload: GeneratorParams) => {
-  const { reportConfig, reportDir, resultsDir, pluginConfig, testResults } = payload;
+export const generateReport = async (payload: GeneratorParams) => {
+  const { reportConfig, reportDir, resultsDir, testResults } = payload;
   const report = new AllureReport({
-    plugins: [
-      {
-        id: "awesome",
-        enabled: true,
-        plugin: new AwesomePlugin(pluginConfig),
-        options: {
-          ...pluginConfig,
-        },
-      },
-    ],
     ...reportConfig,
     output: reportDir,
     reportFiles: new FileSystemReportFiles(reportDir),
@@ -62,32 +52,50 @@ export const generateTestResults = async (payload: GeneratorParams) => {
   await report.done();
 };
 
-export const boostrapReport = async (
-  params: Omit<GeneratorParams, "reportDir" | "resultsDir">,
-): Promise<ReportBootstrap> => {
-  const temp = tmpdir();
-  const allureTestResultsDir = await mkdtemp(resolve(temp, "allure-results-"));
-  const allureReportDir = await mkdtemp(resolve(temp, "allure-report-"));
-
-  await generateTestResults({
-    ...params,
-    resultsDir: allureTestResultsDir,
-    reportDir: allureReportDir,
-  });
-
+export const serveReport = async (reportDir: string) => {
   const server = await serve({
-    servePath: resolve(allureReportDir, "./awesome"),
+    servePath: resolve(reportDir),
   });
 
   return {
     url: `http://localhost:${server.port}`,
     shutdown: async () => {
       await server?.stop();
+    },
+  };
+};
+
+export const bootstrapReport = async (
+  params: Omit<GeneratorParams, "reportDir" | "resultsDir">,
+): Promise<ReportBootstrap> => {
+  const temp = tmpdir();
+  const resultsDir = await mkdtemp(resolve(temp, "allure-results-"));
+  const reportDir = await mkdtemp(resolve(temp, "allure-report-"));
+
+  await generateReport({
+    ...params,
+    resultsDir,
+    reportDir,
+  });
+
+  const server = await serveReport(reportDir);
+
+  return {
+    ...server,
+    reportDir,
+    shutdown: async () => {
+      await server?.shutdown();
 
       try {
-        await rm(allureTestResultsDir, { recursive: true });
-        await rm(allureReportDir, { recursive: true });
+        await rm(resultsDir, { recursive: true });
+        await rm(reportDir, { recursive: true });
       } catch (ignored) {}
     },
   };
 };
+
+export class AwesomePluginWithoutSummary extends AwesomePlugin {
+  async info() {
+    return undefined;
+  }
+}
