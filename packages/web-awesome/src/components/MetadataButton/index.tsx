@@ -11,10 +11,18 @@ interface MetadataButtonProps {
   title?: string;
 }
 
-export const MetadataButton: FunctionalComponent<MetadataButtonProps> = ({ isOpened, setIsOpen, counter, title }) => {
+export const MetadataButton: FunctionalComponent<MetadataButtonProps> = ({
+  isOpened,
+  setIsOpen,
+  counter,
+  title,
+  ...rest
+}) => {
   return (
-    <div
+    <button
+      {...rest}
       className={clsx(styles["report-metadata-header"], isOpened && styles["report-metadata-header-opened"])}
+      type={"button"}
       onClick={() => setIsOpen(!isOpened)}
     >
       <Text size={"m"} bold>
@@ -27,6 +35,6 @@ export const MetadataButton: FunctionalComponent<MetadataButtonProps> = ({ isOpe
         buttonSize={"s"}
         className={styles["report-metadata-header-arrow"]}
       />
-    </div>
+    </button>
   );
 };
