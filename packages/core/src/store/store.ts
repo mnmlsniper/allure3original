@@ -15,7 +15,7 @@ import {
   matchEnvironment,
 } from "@allurereport/core-api";
 import { compareBy, nullsLast, ordinal, reverse } from "@allurereport/core-api";
-import { type AllureStore, type ResultFile, md5 } from "@allurereport/plugin-api";
+import { type AllureStore, type ResultFile, type TestResultFilter, md5 } from "@allurereport/plugin-api";
 import type {
   RawFixtureResult,
   RawMetadata,
@@ -226,11 +226,12 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
 
   async allTestResults(
     options: {
-      includeHidden: boolean;
+      includeHidden?: boolean;
     } = { includeHidden: false },
   ): Promise<TestResult[]> {
     const { includeHidden } = options;
     const result = Array.from(this.#testResults.values());
+
     return includeHidden ? result : result.filter((tr) => !tr.hidden);
   }
 
@@ -367,7 +368,7 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
     return results;
   }
 
-  async testsStatistic(filter?: (testResult: TestResult) => boolean) {
+  async testsStatistic(filter?: TestResultFilter) {
     const all = await this.allTestResults();
 
     return getTestResultsStats(all, filter);
