@@ -1,0 +1,32 @@
+{
+  "statuses": {
+    "passed": "Bestanden",
+    "failed": "Fehlgeschlagen",
+    "broken": "Defekt",
+    "skipped": "Übersprungen",
+    "unknown": "Unbekannt",
+    "total": "Gesamt"
+  },
+  "empty": {
+    "no-results": "Keine Ergebnisse"
+  },
+  "severity": {
+    "blocker": "Blocker",
+    "critical": "Kritisch",
+    "normal": "Normal",
+    "minor": "Geringfügig",
+    "trivial": "Trivial"
+  },
+  "charts": {
+    "trend": {
+      "title": "Trenddiagramm: {{type}}",
+      "type": {
+        "status": "Status",
+        "severity": "Schweregrad"
+      }
+    },
+    "pie": {
+      "title": "Testerfolgsrate"
+    }
+  }
+}

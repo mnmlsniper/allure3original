@@ -1,0 +1,32 @@
+{
+  "statuses": {
+    "passed": "Geslaagd",
+    "failed": "Mislukt",
+    "broken": "Defect",
+    "skipped": "Overgeslagen",
+    "unknown": "Onbekend",
+    "total": "Totaal"
+  },
+  "empty": {
+    "no-results": "Geen resultaten"
+  },
+  "severity": {
+    "blocker": "Blokkeerder",
+    "critical": "Kritiek",
+    "normal": "Normaal",
+    "minor": "Klein",
+    "trivial": "Triviaal"
+  },
+  "charts": {
+    "trend": {
+      "title": "Trendgrafiek: {{type}}",
+      "type": {
+        "status": "Status",
+        "severity": "Ernst"
+      }
+    },
+    "pie": {
+      "title": "Test slagingspercentage"
+    }
+  }
+}

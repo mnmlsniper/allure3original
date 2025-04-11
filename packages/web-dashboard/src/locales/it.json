@@ -1,0 +1,32 @@
+{
+  "statuses": {
+    "passed": "Superato",
+    "failed": "Fallito",
+    "broken": "Rotto",
+    "skipped": "Saltato",
+    "unknown": "Sconosciuto",
+    "total": "Totale"
+  },
+  "empty": {
+    "no-results": "Nessun risultato"
+  },
+  "severity": {
+    "blocker": "Bloccante",
+    "critical": "Critico",
+    "normal": "Normale",
+    "minor": "Minore",
+    "trivial": "Banale"
+  },
+  "charts": {
+    "trend": {
+      "title": "Grafico di tendenza: {{type}}",
+      "type": {
+        "status": "Stato",
+        "severity": "Gravità"
+      }
+    },
+    "pie": {
+      "title": "Tasso di successo dei test"
+    }
+  }
+}
