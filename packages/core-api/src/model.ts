@@ -109,6 +109,10 @@ export interface DefaultTestStepResult {
   stepId?: string;
 
   type: "step";
+
+  message?: string;
+  trace?: string;
+  hasSimilarErrorInSubSteps?: boolean;
 }
 
 /**
