@@ -34,6 +34,7 @@ import { createRequire } from "node:module";
 import { basename, join } from "node:path";
 import { getPieChartData } from "./charts.js";
 import { convertFixtureResult, convertTestResult } from "./converters.js";
+import { filterEnv } from "./environments.js";
 import type { AwesomeOptions, TemplateManifest } from "./model.js";
 import type { AwesomeDataWriter, ReportFile } from "./writer.js";
 
@@ -185,9 +186,12 @@ export const generateTree = async (
     visibleTests,
     labels,
     ({ id, name, status, duration, flaky, start, retries }) => {
+      const retriesCount = retries?.length;
+
       return {
         nodeId: id,
-        retry: !!retries?.length,
+        retry: Boolean(retriesCount),
+        retriesCount,
         name,
         status,
         duration,
@@ -233,19 +237,13 @@ export const generateVariables = async (writer: AwesomeDataWriter, store: Allure
 };
 
 export const generateStatistic = async (writer: AwesomeDataWriter, store: AllureStore, filter?: TestResultFilter) => {
-  const reportStatistic = await store.testsStatistic(filter);
+  const statistic = await store.testsStatistic(filter);
   const environments = await store.allEnvironments();
 
-  await writer.writeWidget("statistic.json", reportStatistic);
+  await writer.writeWidget("statistic.json", statistic);
 
   for (const env of environments) {
-    const envStatistic = await store.testsStatistic((testResult) => {
-      if (testResult.environment !== env) {
-        return false;
-      }
-
-      return filter ? filter(testResult) : true;
-    });
+    const envStatistic = await store.testsStatistic(filterEnv(env, filter));
 
     await writer.writeWidget(join(env, "statistic.json"), envStatistic);
   }
@@ -258,13 +256,7 @@ export const generatePieChart = async (writer: AwesomeDataWriter, store: AllureS
   await writer.writeWidget("pie_chart.json", getPieChartData(reportStatistic));
 
   for (const env of environments) {
-    const envStatistic = await store.testsStatistic((testResult) => {
-      if (testResult.environment !== env) {
-        return false;
-      }
-
-      return filter ? filter(testResult) : true;
-    });
+    const envStatistic = await store.testsStatistic(filterEnv(env, filter));
 
     await writer.writeWidget(join(env, "pie_chart.json"), getPieChartData(envStatistic));
   }
