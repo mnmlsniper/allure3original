@@ -100,6 +100,8 @@ test.describe("retries", () => {
   });
 
   test("should be able to filter tests with retries using retry filter", async ({ page }) => {
+    await expect(page.getByTestId("tree-leaf")).toHaveCount(3);
+
     // Open filters
     await page.getByTestId("filters-button").click();
 
@@ -128,20 +130,25 @@ test.describe("retries", () => {
     await expect(retryIcons).toHaveCount(2);
 
     // Check retry count indicators
-    const testWithRetriesIcon = page
-      .getByTestId("tree-leaf")
+    const treeLeaves = page.getByTestId("tree-leaf");
+
+    const testWithRetriesIcon = treeLeaves
       .filter({
         has: page.getByText("Test with retries", { exact: true }),
       })
       .getByTestId("tree-item-retries");
     await expect(testWithRetriesIcon).toContainText("2"); // 2 retries
 
-    const anotherTestWithRetriesIcon = page
-      .getByTestId("tree-leaf")
+    const anotherTestWithRetriesIcon = treeLeaves
       .filter({
         has: page.getByText("Another test with retries", { exact: true }),
       })
       .getByTestId("tree-item-retries");
     await expect(anotherTestWithRetriesIcon).toContainText("1"); // 1 retry
+  });
+
+  test("metadata shows correct count of retries", async ({ page }) => {
+    await expect(page.getByTestId("metadata-item-total").getByTestId("metadata-value")).toHaveText("3");
+    await expect(page.getByTestId("metadata-item-retries").getByTestId("metadata-value")).toHaveText("2");
   });
 });

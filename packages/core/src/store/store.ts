@@ -30,6 +30,7 @@ import type { EventEmitter } from "node:events";
 import type { AllureStoreEvents } from "../utils/event.js";
 import { getTestResultsStats } from "../utils/stats.js";
 import { testFixtureResultRawToState, testResultRawToState } from "./convert.js";
+import { isFlaky } from "../utils/flaky.js";
 
 const index = <T>(indexMap: Map<string, T[]>, key: string | undefined, ...items: T[]) => {
   if (key) {
@@ -137,6 +138,10 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
     }
 
     testResult.environment = matchEnvironment(this.#environmentsConfig, testResult);
+
+    // Make flaky status more accurate
+    const trHistory = await this.historyByTr(testResult);
+    testResult.flaky = isFlaky(testResult, trHistory);
 
     this.#testResults.set(testResult.id, testResult);
 
@@ -299,7 +304,7 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
     return this.indexAttachmentByTestResult.get(trId) ?? [];
   }
 
-  retriesByTr(tr: TestResult): TestResult[] {
+  async retriesByTr(tr: TestResult): Promise<TestResult[]> {
     if (!tr || tr.hidden || !tr.historyId) {
       return [];
     }
@@ -312,23 +317,23 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
   async retriesByTrId(trId: string): Promise<TestResult[]> {
     const tr = await this.testResultById(trId);
 
-    if (!tr) {
-      return [];
-    }
-
-    return this.retriesByTr(tr);
+    return tr ? this.retriesByTr(tr) : [];
   }
 
-  async historyByTrId(trId: string): Promise<HistoryTestResult[]> {
-    const tr = await this.testResultById(trId);
-
-    if (!tr?.historyId) {
+  async historyByTr(tr: TestResult): Promise<HistoryTestResult[]> {
+        if (!tr?.historyId) {
       return [];
     }
 
     return [...this.#history]
       .filter((dp) => !!dp.testResults[tr.historyId!])
       .map((dp) => ({ ...dp.testResults[tr.historyId!] }));
+  }
+
+  async historyByTrId(trId: string): Promise<HistoryTestResult[]> {
+    const tr = await this.testResultById(trId);
+
+    return tr ? this.historyByTr(tr) : [];
   }
 
   async fixturesByTrId(trId: string): Promise<TestFixtureResult[]> {
@@ -383,12 +388,19 @@ export class DefaultAllureStore implements AllureStore, ResultsVisitor {
 
   async testsStatistic(filter?: TestResultFilter) {
     const all = await this.allTestResults();
-    const allWithRetries = all.map((tr) => ({
-      ...tr,
-      retries: this.retriesByTr(tr),
+
+    const allWithStats = await Promise.all(all.map(async (tr) => {
+      const trHistory = await this.historyByTr(tr);
+      const retries = await this.retriesByTr(tr);
+
+      return {
+        ...tr,
+        flaky: isFlaky(tr, trHistory),
+        retries,
+      };
     }));
 
-    return getTestResultsStats(allWithRetries, filter);
+    return getTestResultsStats(allWithStats, filter);
   }
 
   // environments
