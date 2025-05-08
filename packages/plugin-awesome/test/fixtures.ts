@@ -182,18 +182,4 @@ const context: PluginContext = {
 export const fixtures = {
   store,
   context,
-};
-
-export function createFilesCollectorWithCheck(check: (path: string, content?: Buffer) => void) {
-  const files: string[] = [];
-  const context = {
-    reportFiles: {
-      addFile: async (filePath: string | { path: string }, content?: Buffer) => {
-        const normalizedPath = typeof filePath === 'string' ? filePath : filePath.path;
-        files.push(normalizedPath);
-        check(normalizedPath, content);
-      }
-    }
-  };
-  return { files, context };
-} 
+}; 

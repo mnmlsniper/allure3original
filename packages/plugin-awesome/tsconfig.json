@@ -3,8 +3,6 @@
   "include": ["./src"],
   "compilerOptions": {
     "jsx": "react",
-    "outDir": "./dist",
-    "lib": ["ESNext"],
-    "types": ["node"]
+    "outDir": "./dist"
   }
 }
